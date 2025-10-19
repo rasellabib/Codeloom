@@ -1,0 +1,6 @@
+.nav {
+  width: 1344px;
+  margin: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}

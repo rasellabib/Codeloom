@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Cal+Sans&family=Castoro:ital@0;1&family=Lexend:wght@100..900&display=swap");
+:root {
+  /*font Variable*/
+  --ff-Cal-Sans: "Cal Sans", sans-serif;
+  --ff-Lexend: "Lexend", sans-serif;
+  --ff-Castoro: "Castoro", serif;
+  --color-primary-orange: #ff602f;
+  --color-black: #19191a;
+  --color-white: #ffffff;
+  --color-black-forest: rgba(84, 84, 84, 1);
+  --bg-secondary: rgba(245, 245, 245, 1);
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.cal-sans {
+  font-family: var(--ff-Cal-Sans) !important;
+}
+.lexend {
+  font-family: var(--ff-Lexend) !important;
+}
+.castoro {
+  font-family: var(--ff-Castoro) !important;
+}
+img {
+  max-width: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-bottom: 0;
+  font-family: var(--ff-Cal-Sans);
+}
+
+h1,
+.h1 {
+  font-family: var(--ff-Cal-Sans);
+  font-weight: 400;
+  font-size: 200px;
+  line-height: 1;
+  letter-spacing: 0%;
+}
+h2,
+.h2 {
+  font-family: var(--ff-Cal-Sans);
+  font-weight: 400;
+  font-size: 90px;
+  line-height: 1;
+  letter-spacing: 0%;
+}
+h3,
+.h3 {
+  font-family: var(--ff-Cal-Sans);
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: 0%;
+}
+h4,
+.h4 {
+  font-family: var(--ff-Cal-Sans);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0%;
+}
+.line-height-141 {
+  line-height: 1.41;
+}
+h5,
+.h5 {
+  font-family: var(--ff-Lexend);
+  font-weight: 400;
+  font-size: 18px;
+  leading-trim: NONE;
+  line-height: 1.55;
+  letter-spacing: -0.5%;
+}
+h6,
+.h6 {
+  font-family: var(--ff-Lexend);
+  font-weight: 400;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 1.5;
+  letter-spacing: -0.5%;
+}
+p {
+  font-family: var(--ff-Cal-Sans);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.5%;
+}
+
+@import "Css/Nav.css";
+
+.circle-bg {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container {
+  max-width: 1344px;
+  margin: auto;
+}
+.p-tb {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.call-image {
+  background: linear-gradient(180deg, #ff0021 0%, #ff8717 49.04%, #fff1ec 100%);
+}
+
+.loop-text {
+  display: inline-flex;
+  animation: scroll 20s linear infinite;
+  background: linear-gradient(180deg, #f3edea 0%, rgba(243, 237, 234, 0) 100%);
+  /* background: linear-gradient(180deg, #0f0f0f 0%, rgba(15, 15, 15, 0.1) 100%); */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-inner {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-inner span {
+  display: inline-block;
+  margin-right: 50px;
+  background: linear-gradient(180deg, #f3edea 0%, rgba(243, 237, 234, 0) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.image-container {
+  width: 1224px;
+  height: 580px;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: inherit;
+}
+.icon-svg { width: 18px; height: 18px; display: block; }
+.circle { transition: transform 180ms cubic-bezier(.2,.9,.3,1); }
