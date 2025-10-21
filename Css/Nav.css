@@ -1,6 +1,32 @@
 .nav {
-  width: 1344px;
   margin: auto;
   left: 50%;
   transform: translateX(-50%);
+}
+.transition-fade {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.hidden-nav {
+  opacity: 0;
+  pointer-events: none;
+}
+.visible-nav {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Animation logic */
+.nav-start {
+  width: 70px;
+  height: 70px;
+  border-radius: 9999px; /* fully round */
+  transition: all 1s ease;
+  overflow: hidden;
+}
+
+.nav-expanded {
+  width: 1344px;
+  height: 80px;
+  transition: all 1s ease;
+  overflow: hidden;
 }

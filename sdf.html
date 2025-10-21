@@ -1,289 +1,57 @@
-<!doctype html>
-<html lang="bn">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Smooth Accordion with SVG Icons - Tailwind</title>
-
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    body { font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-    .divider { border-color: #eee; }
-    /* small helper to size svg inside circle */
-    .icon-svg { width: 18px; height: 18px; display: block; }
-  </style>
-</head>
-<body class="bg-white py-10 px-4">
-  <div class="max-w-4xl mx-auto">
-    <div id="accordion" class="divide-y divider">
-
-      <!-- Item 1 - open -->
-      <div class="accordion-item" data-open="true">
-        <button type="button"
-                class="w-full flex items-start justify-between gap-4 py-7 pr-4 pl-0 focus:outline-none"
-                aria-expanded="true"
-                aria-controls="panel-1"
-                id="head-1">
-          <h3 class="text-2xl md:text-3xl font-extrabold text-[#111827] leading-tight">
-            Do you only work with coaches?
-          </h3>
-
-          <!-- circle: contains TWO svgs; replace inner SVGs with your own -->
-          <span class="ml-4 shrink-0 relative">
-            <span class="circle w-9 h-9 md:w-10 md:h-10 inline-flex items-center justify-center rounded-full bg-[#f27f36] text-white select-none shadow-sm transition-transform duration-250 transform">
-              <!-- MINUS SVG (visible when open) -->
-              <svg class="svg-minus icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <!-- Example minus SVG path; replace with your own if needed -->
-                <rect x="4" y="11" width="16" height="2" rx="1" fill="white"></rect>
-              </svg>
-
-              <!-- PLUS SVG (hidden when open) -->
-              <svg class="svg-plus icon-svg hidden" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <!-- Example plus SVG path; replace with your own -->
-                <path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5z" fill="white"></path>
-              </svg>
-            </span>
-          </span>
-        </button>
-
-        <div id="panel-1" class="panel overflow-hidden px-0 pr-20 pb-7 transition-all duration-350 ease-[cubic-bezier(.2,.9,.3,1)]"
-             role="region" aria-labelledby="head-1" style="max-height: none; opacity:1;">
-          <p class="text-lg md:text-xl text-[#6b6b6b] leading-relaxed max-w-3xl">
-            Yes! We specialize in helping coaches (life, business, career, health, etc.) because we understand your industry’s unique needs. This focus allows us to deliver faster, more effective results for your brand and website.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 2 - closed -->
-      <div class="accordion-item" data-open="false">
-        <button type="button"
-                class="w-full flex items-start justify-between gap-4 py-7 pr-4 pl-0 focus:outline-none"
-                aria-expanded="false"
-                aria-controls="panel-2"
-                id="head-2">
-          <h3 class="text-2xl md:text-3xl font-extrabold text-[#111827] leading-tight">
-            Why do i need your service as a coach?
-          </h3>
-
-          <span class="ml-4 shrink-0 relative">
-            <span class="circle w-9 h-9 md:w-10 md:h-10 inline-flex items-center justify-center rounded-full bg-[#f27f36] text-white select-none shadow-sm transition-transform duration-250 transform">
-              <!-- MINUS (hidden for closed item) -->
-              <svg class="svg-minus icon-svg hidden" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="4" y="11" width="16" height="2" rx="1" fill="white"></rect>
-              </svg>
-
-              <!-- PLUS (visible for closed item) -->
-              <svg class="svg-plus icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5z" fill="white"></path>
-              </svg>
-            </span>
-          </span>
-        </button>
-
-        <div id="panel-2" class="panel overflow-hidden px-0 pr-20 pb-7 transition-all duration-350 ease-[cubic-bezier(.2,.9,.3,1)]"
-             role="region" aria-labelledby="head-2" style="max-height: 0; opacity: 0;">
-          <p class="text-lg md:text-xl text-[#6b6b6b] leading-relaxed max-w-3xl">
-            A high-converting website builds trust, communicates your offer clearly, and converts visitors into paying clients — saving you time and scaling your coaching business.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="accordion-item" data-open="false">
-        <button type="button"
-                class="w-full flex items-start justify-between gap-4 py-7 pr-4 pl-0 focus:outline-none"
-                aria-expanded="false"
-                aria-controls="panel-3"
-                id="head-3">
-          <h3 class="text-2xl md:text-3xl font-extrabold text-[#111827] leading-tight">
-            What’s your pricing?
-          </h3>
-          <span class="ml-4 shrink-0 relative">
-            <span class="circle w-9 h-9 md:w-10 md:h-10 inline-flex items-center justify-center rounded-full bg-[#f27f36] text-white select-none shadow-sm transition-transform duration-250 transform">
-              <svg class="svg-minus icon-svg hidden" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="4" y="11" width="16" height="2" rx="1" fill="white"></rect>
-              </svg>
-              <svg class="svg-plus icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5z" fill="white"></path>
-              </svg>
-            </span>
-          </span>
-        </button>
-
-        <div id="panel-3" class="panel overflow-hidden px-0 pr-20 pb-7 transition-all duration-350 ease-[cubic-bezier(.2,.9,.3,1)]"
-             role="region" aria-labelledby="head-3" style="max-height: 0; opacity: 0;">
-          <p class="text-lg md:text-xl text-[#6b6b6b] leading-relaxed max-w-3xl">
-            Our pricing depends on the scope — website-only, full brand & site, or ongoing conversion optimization. Contact us for a tailored quote.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="accordion-item" data-open="false">
-        <button type="button"
-                class="w-full flex items-start justify-between gap-4 py-7 pr-4 pl-0 focus:outline-none"
-                aria-expanded="false"
-                aria-controls="panel-4"
-                id="head-4">
-          <h3 class="text-2xl md:text-3xl font-extrabold text-[#111827] leading-tight">
-            How do I get started with Codloom?
-          </h3>
-          <span class="ml-4 shrink-0 relative">
-            <span class="circle w-9 h-9 md:w-10 md:h-10 inline-flex items-center justify-center rounded-full bg-[#f27f36] text-white select-none shadow-sm transition-transform duration-250 transform">
-              <svg class="svg-minus icon-svg hidden" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="4" y="11" width="16" height="2" rx="1" fill="white"></rect>
-              </svg>
-              <svg class="svg-plus icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5z" fill="white"></path>
-              </svg>
-            </span>
-          </span>
-        </button>
-
-        <div id="panel-4" class="panel overflow-hidden px-0 pr-20 pb-7 transition-all duration-350 ease-[cubic-bezier(.2,.9,.3,1)]"
-             role="region" aria-labelledby="head-4" style="max-height: 0; opacity: 0;">
-          <p class="text-lg md:text-xl text-[#6b6b6b] leading-relaxed max-w-3xl">
-            Start by booking a discovery call. We’ll review your goals, audit your current site (if any), then plan a fast, conversion-first build.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 5 -->
-      <div class="accordion-item" data-open="false">
-        <button type="button"
-                class="w-full flex items-start justify-between gap-4 py-7 pr-4 pl-0 focus:outline-none"
-                aria-expanded="false"
-                aria-controls="panel-5"
-                id="head-5">
-          <h3 class="text-2xl md:text-3xl font-extrabold text-[#111827] leading-tight">
-            What is high-converting website?
-          </h3>
-          <span class="ml-4 shrink-0 relative">
-            <span class="circle w-9 h-9 md:w-10 md:h-10 inline-flex items-center justify-center rounded-full bg-[#f27f36] text-white select-none shadow-sm transition-transform duration-250 transform">
-              <svg class="svg-minus icon-svg hidden" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="4" y="11" width="16" height="2" rx="1" fill="white"></rect>
-              </svg>
-              <svg class="svg-plus icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5z" fill="white"></path>
-              </svg>
-            </span>
-          </span>
-        </button>
-
-        <div id="panel-5" class="panel overflow-hidden px-0 pr-20 pb-7 transition-all duration-350 ease-[cubic-bezier(.2,.9,.3,1)]"
-             role="region" aria-labelledby="head-5" style="max-height: 0; opacity: 0;">
-          <p class="text-lg md:text-xl text-[#6b6b6b] leading-relaxed max-w-3xl">
-            A high-converting website communicates value immediately, reduces friction, and guides visitors to take the next step — book, subscribe or buy.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      const container = document.getElementById('accordion');
-      const items = Array.from(container.querySelectorAll('.accordion-item'));
-
-      function showPlusMinus(btn, showMinus) {
-        const plus = btn.querySelector('.svg-plus');
-        const minus = btn.querySelector('.svg-minus');
-        if (plus) plus.classList.toggle('hidden', showMinus);
-        if (minus) minus.classList.toggle('hidden', !showMinus);
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Navbar Switch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .transition-fade {
+        transition: opacity 0.5s ease, transform 0.5s ease;
       }
-
-      function closeItem(it) {
-        const btn = it.querySelector('button');
-        const panel = it.querySelector('.panel');
-        it.dataset.open = "false";
-        btn.setAttribute('aria-expanded', 'false');
-
-        panel.style.transition = 'max-height 360ms cubic-bezier(.2,.9,.3,1), opacity 260ms';
-        panel.style.maxHeight = panel.scrollHeight + 'px';
-        panel.offsetHeight;
-        panel.style.maxHeight = '0px';
-        panel.style.opacity = '0';
-
-        showPlusMinus(btn, false); // show plus
-        const circle = btn.querySelector('.circle');
-        if (circle) {
-          circle.style.transform = 'scale(0.98)';
-          setTimeout(()=> circle.style.transform = 'scale(1)', 180);
-        }
+      .hidden-nav {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-20px);
       }
-
-      function openItem(it) {
-        const btn = it.querySelector('button');
-        const panel = it.querySelector('.panel');
-        it.dataset.open = "true";
-        btn.setAttribute('aria-expanded', 'true');
-
-        panel.style.transition = 'max-height 420ms cubic-bezier(.2,.9,.3,1), opacity 260ms';
-        panel.style.maxHeight = panel.scrollHeight + 'px';
-        panel.style.opacity = '1';
-        setTimeout(()=> {
-          if (it.dataset.open === "true") panel.style.maxHeight = panel.scrollHeight + 'px';
-        }, 450);
-
-        showPlusMinus(btn, true); // show minus
-        const circle = btn.querySelector('.circle');
-        if (circle) {
-          circle.style.transform = 'scale(1.03)';
-          setTimeout(()=> circle.style.transform = 'scale(1)', 200);
-        }
+      .visible-nav {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
       }
+    </style>
+  </head>
+  <body class="bg-gray-100 h-[2000px]">
 
-      // init
-      items.forEach(it => {
-        const open = it.dataset.open === "true";
-        const btn = it.querySelector('button');
-        const panel = it.querySelector('.panel');
+    <!-- First Navbar -->
+    <nav id="nav1" class="fixed top-5 left-1/2 -translate-x-1/2 bg-black text-white w-[90%] h-[70px] rounded-full flex items-center justify-center transition-fade visible-nav">
+      <h1>Navbar 1</h1>
+    </nav>
 
-        if (open) {
-          panel.style.maxHeight = panel.scrollHeight + 'px';
-          panel.style.opacity = '1';
-          btn.setAttribute('aria-expanded','true');
-          showPlusMinus(btn, true);
+    <!-- Second Navbar -->
+    <nav id="nav2" class="fixed top-5 left-1/2 -translate-x-1/2 bg-[#FF6817] text-white w-[90%] h-[70px] rounded-full flex items-center justify-center transition-fade hidden-nav">
+      <h1>Navbar 2</h1>
+    </nav>
+
+    <script>
+      const nav1 = document.getElementById("nav1");
+      const nav2 = document.getElementById("nav2");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) { // এখানে তুমি 300px বা 500px বসাতে পারো
+          nav1.classList.remove("visible-nav");
+          nav1.classList.add("hidden-nav");
+
+          nav2.classList.remove("hidden-nav");
+          nav2.classList.add("visible-nav");
         } else {
-          panel.style.maxHeight = '0px';
-          panel.style.opacity = '0';
-          btn.setAttribute('aria-expanded','false');
-          showPlusMinus(btn, false);
+          nav1.classList.add("visible-nav");
+          nav1.classList.remove("hidden-nav");
+
+          nav2.classList.add("hidden-nav");
+          nav2.classList.remove("visible-nav");
         }
-
-        btn.addEventListener('click', () => {
-          const isOpen = it.dataset.open === "true";
-
-          // close other open items
-          items.forEach(other => {
-            if (other !== it && other.dataset.open === "true") closeItem(other);
-          });
-
-          if (isOpen) closeItem(it);
-          else openItem(it);
-        });
-
-        btn.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            btn.click();
-          }
-        });
       });
-
-      window.addEventListener('resize', () => {
-        items.forEach(it => {
-          if (it.dataset.open === "true") {
-            const panel = it.querySelector('.panel');
-            panel.style.maxHeight = panel.scrollHeight + 'px';
-          }
-        });
-      });
-    })();
-  </script>
-</body>
+    </script>
+  </body>
 </html>

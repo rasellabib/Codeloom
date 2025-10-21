@@ -23,6 +23,7 @@ body {
 .castoro {
   font-family: var(--ff-Castoro) !important;
 }
+
 img {
   max-width: 100%;
 }
@@ -174,5 +175,24 @@ p {
   object-fit: cover;
   object-position: inherit;
 }
-.icon-svg { width: 18px; height: 18px; display: block; }
-.circle { transition: transform 180ms cubic-bezier(.2,.9,.3,1); }
+.icon-svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+.circle {
+  transition: transform 180ms cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #555, 0 0 10px #999;
+  }
+  50% {
+    text-shadow: 0 0 15px #000, 0 0 25px #444;
+  }
+}
+
+#loader h1 {
+  animation: glow 2s infinite ease-in-out;
+}
