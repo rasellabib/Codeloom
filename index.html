@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./Css/loader.css" />
     <link rel="stylesheet" href="./Css/style.css" />
     <link rel="stylesheet" href="./Css/Nav.css" />
-    <title>rasel</title>
+    <title>labib</title>
   </head>
   <body>
     <!-- ============ loader ============= -->
@@ -31,7 +31,7 @@
         </div>
 
         <!-- =================nav1================== -->
-        <section>
+        <section >
           <div
             id="navbar"
             class="absolute z-10 top-[8px] ml-auto nav bg-white rounded-full nav-start transition-fade visible-nav"
@@ -117,7 +117,7 @@
           class="circle-bg absolute top-[-360px] m-auto h-[600px] w-[1088px] blur-[150px] bg-[#FF6817] -z-10"
         ></div>
         <!-- ================ hero ===================== -->
-        <section>
+        <section id="hero" data-speed="2">
           <div class="container">
             <div class="bg-white rounded-[30px] p-tb mt-[96px]">
               <div class="hero-content">
@@ -185,7 +185,7 @@
           </div>
         </section>
         <!-- what he do  -->
-        <section>
+        <section data-speed="0">
           <div
             class="container bg-[#F7F7F5] rounded-[30px] py-[80px] px-[60px]"
           >
@@ -408,7 +408,7 @@
           </div>
         </section>
         <!-- our work -->
-        <section>
+        <section data-speed="1">
           <div class="container p-tb">
             <div class="tite-sec flex justify-center flex-col gap-[16px]">
               <button
@@ -650,9 +650,9 @@
             </div>
             <div class="mt-[45px]">
               <div class="max-w-4xl mx-auto">
-                <div id="accordion" class="divide-y divider">
+                <div id="accordion" class="">
                   <!-- Item template -->
-                  <div class="accordion-item" data-open="true">
+                  <div class="accordion-item border-bottom " data-open="true">
                     <button
                       type="button"
                       class="w-full flex items-center justify-between gap-4 py-7 pr-4 pl-0 focus:outline-none"
@@ -721,7 +721,7 @@
                     </div>
                   </div>
 
-                  <div class="accordion-item" data-open="false">
+                  <div class="accordion-item border-bottom " data-open="false">
                     <button
                       type="button"
                       class="w-full flex items-center justify-between gap-4 py-7 pr-4 pl-0 focus:outline-none"
@@ -785,7 +785,7 @@
                     </div>
                   </div>
 
-                  <div class="accordion-item" data-open="false">
+                  <div class="accordion-item border-bottom " data-open="false">
                     <button
                       type="button"
                       class="w-full flex items-center justify-between gap-4 py-7 pr-4 pl-0 focus:outline-none"
@@ -848,7 +848,7 @@
                     </div>
                   </div>
 
-                  <div class="accordion-item" data-open="false">
+                  <div class="accordion-item border-bottom " data-open="false">
                     <button
                       type="button"
                       class="w-full flex items-center justify-between gap-4 py-7 pr-4 pl-0 focus:outline-none"
@@ -911,7 +911,7 @@
                     </div>
                   </div>
 
-                  <div class="accordion-item" data-open="false">
+                  <div class="accordion-item border-bottom " data-open="false">
                     <button
                       type="button"
                       class="w-full flex items-center justify-between gap-4 py-7 pr-4 pl-0 focus:outline-none"
@@ -1294,16 +1294,17 @@
         </section>
       </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjs@11.8.2/lib/browser/math.js"></script>
     <script src="/js/loader.js"></script>
+    <script src="/js/Gsap.js"></script>
+
     <script src="/js/nav.js"></script>
     <script src="/js/acoordion.js"></script>
-    <script src="/js/Gsap.js"></script>
   </body>
 </html>

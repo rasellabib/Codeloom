@@ -1,80 +1,249 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smooth Scroll Page</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <!-- GSAP + ScrollSmoother CDN -->
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>GSAP ScrollSmoother Demo</title>
     <style>
-      html,
-      body {
+      * {
+        box-sizing: border-box;
+      }
+      body,
+      html {
         height: 100%;
         margin: 0;
-        padding: 0;
-        overflow: hidden; /* ScrollSmoother এর জন্য body scroll off */
+        font-family: Inter, system-ui, Arial;
+      }
+      /* wrapper + content required by ScrollSmoother */
+      #smooth-wrapper {
+        /* overflow: hidden; */
+        position: fixed;
+        inset: 0;
+      } /* full viewport */
+      #smooth-content {
+        min-height: 100vh;
+      }
+
+      header {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 40;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 20px;
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(6px);
+      }
+      nav a {
+        color: white;
+        margin-left: 14px;
+        text-decoration: none;
+      }
+      section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 120px 18px 80px;
+        color: #fff;
+        font-size: clamp(20px, 4vw, 38px);
+      }
+      .s1 {
+        background: linear-gradient(135deg, #0f172a, #021331);
+      }
+      .s2 {
+        background: linear-gradient(135deg, #0b3f5f, #06384f);
+      }
+      .s3 {
+        background: linear-gradient(135deg, #2b2b55, #1a2233);
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.06);
+        padding: 20px;
+        border-radius: 12px;
+        max-width: 680px;
+        text-align: center;
+      }
+      /* small helper for debug */
+      .debug {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 8px 10px;
+        border-radius: 8px;
+        font-size: 13px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+        }
       }
     </style>
   </head>
-
   <body>
-    <!-- Scroll Wrapper -->
+    <!-- NOTE: ScrollSmoother requires this exact DOM structure: a wrapper that fills viewport,
+       and a content element inside it that holds the real page content. -->
     <div id="smooth-wrapper">
       <div id="smooth-content">
-        <!-- Section 1 -->
-        <section
-          class="h-screen flex items-center justify-center bg-gradient-to-b from-orange-100 to-orange-300"
-        >
-          <h1 class="text-6xl font-extrabold text-orange-700">
-            Welcome to My Page
-          </h1>
+        <header id="siteHeader">
+          <div class="brand" style="color: #fff; font-weight: 700">
+            TumarSite
+          </div>
+          <nav>
+            <a href="#s1">Home</a>
+            <a href="#s2">Features</a>
+            <a href="#s3">Contact</a>
+          </nav>
+        </header>
+
+        <section id="s1" class="s1">
+          <div class="card">
+            <h1 style="margin: 0 0 12px">Welcome — smooth with GSAP</h1>
+            <p style="margin: 0">
+              ScrollSmoother + ScrollTrigger দিয়ে animation গুলো সহজে কন্ট্রোল
+              করো
+            </p>
+          </div>
         </section>
 
-        <!-- Section 2 -->
-        <section
-          class="h-screen flex items-center justify-center bg-gradient-to-b from-blue-100 to-blue-300"
-        >
-          <h1 class="text-6xl font-extrabold text-blue-700">
-            Smooth Scroll Section
-          </h1>
+        <section id="s2" class="s2">
+          <div class="card">
+            <h2 style="margin: 0 0 12px">Features</h2>
+            <p style="margin: 0">
+              Effects, pinning, parallax, and scroll-driven timelines
+            </p>
+          </div>
         </section>
 
-        <!-- Section 3 -->
-        <section
-          class="h-screen flex items-center justify-center bg-gradient-to-b from-green-100 to-green-300"
-        >
-          <h1 class="text-6xl font-extrabold text-green-700">
-            Perfectly Balanced Motion
-          </h1>
+        <section id="s3" class="s3">
+          <div class="card">
+            <h2 style="margin: 0 0 12px">Contact</h2>
+            <p style="margin: 0">
+              This demo includes a nav intro animation and reveal effects
+            </p>
+          </div>
         </section>
 
-        <!-- Section 4 -->
-        <section
-          class="h-screen flex items-center justify-center bg-gradient-to-b from-purple-100 to-purple-300"
+        <footer
+          style="
+            color: #ddd;
+            padding: 80px 18px;
+            text-align: center;
+            background: #071025;
+          "
         >
-          <h1 class="text-6xl font-extrabold text-purple-700">
-            End of Page ✨
-          </h1>
-        </section>
+          © TumarSite
+        </footer>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollSmoother.min.js"></script>
-    <!-- ScrollSmoother Script -->
-    <script>
-      gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 
-      ScrollSmoother.create({
-        wrapper: "#smooth-wrapper",
-        content: "#smooth-content",
-        smooth: 1, // smoothness level (0.8–1.2 ভালো range)
-        effects: true,
-        normalizeScroll: true,
+    <div class="debug" id="dbg">GSAP demo</div>
+
+    <!-- GSAP + plugins from CDN (development). For production use npm packages + bundler. -->
+    <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollSmoother.min.js"></script>
+
+    <script>
+      // register plugins
+      gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+      // Respect reduced motion: if user prefers reduced motion, don't enable heavy smoothing
+      const prefersReduced =
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReduced) {
+        document.getElementById("dbg").textContent =
+          "prefers-reduced-motion: using native scroll";
+        // Optionally, you can remove the fixed wrapper to use native scroll behavior
+        document.getElementById("smooth-wrapper").style.position = "relative";
+        document.getElementById("smooth-wrapper").style.height = "auto";
+        // no ScrollSmoother init
+      } else {
+        // create smoother
+        const smoother = ScrollSmoother.create({
+          wrapper: "#smooth-wrapper",
+          content: "#smooth-content",
+          smooth: 1.2, // try 0.8 ~ 1.5 - larger = more easing feel
+          smoothTouch: 0.1, // touch smoothing on mobile (0 = native)
+          effects: true, // enables data-speed / data-lag attributes for children
+          normalizeScroll: true, // helps with cross-browser normalization (optional)
+          ignoreMobileResize: true, // optional: avoid annoying resizes during mobile keyboard
+        });
+
+        document.getElementById("dbg").textContent = "ScrollSmoother active";
+
+        // Example: animate nav intro
+        const tl = gsap.timeline();
+        tl.from("#siteHeader", {
+          y: -60,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        });
+
+        // Reveal content with ScrollTrigger (works with ScrollSmoother automatically)
+        gsap.utils.toArray(".card").forEach((card) => {
+          gsap.from(card, {
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none none",
+              scroller: "#smooth-content", // when using ScrollSmoother, scroller is the content element
+            },
+          });
+        });
+
+        // Example: parallax background effect using data-speed (ScrollSmoother effects)
+        // You can add elements with data-speed attribute that ScrollSmoother will move differently:
+        // <div class="bg" data-speed="0.3"></div>
+        // (You can add such elements to sections for parallax)
+
+        // If you ever change layout dynamically, make sure to refresh ScrollTrigger & ScrollSmoother:
+        // ScrollTrigger.refresh();
+        // smoother.scrollTop(0); // optional to reset scroll
+
+        // IMPORTANT: if you use other custom smoothers (e.g., Lenis), you'd need to create a scrollerProxy
+        // so ScrollTrigger knows how to get/set scroll position.
+      }
+
+      /* ===== Performance tips / gotchas =====
+      1. Keep heavy paint operations minimal: avoid large CSS blur/backdrop-filter on many elements.
+      2. For mobile, prefer smaller smoothTouch (or 0 to use native touch scrolling).
+      3. If experiencing jank, try reducing `smooth` value toward 0.8 or disable smoother on low-end devices.
+      4. When using other smoothing libraries (Lenis), use ScrollTrigger.scrollerProxy to sync them.
+      5. Use ScrollTrigger.refresh() after DOM/content size changes to avoid weird offsets.
+      6. For anchor links, use smoother.scrollTo(element) if smoother exists, else native scrollIntoView.
+    */
+
+      // Example: anchor links that use smoother when available
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const href = a.getAttribute("href");
+          if (!href || href === "#") return;
+          const target = document.querySelector(href);
+          if (!target) return;
+          e.preventDefault();
+          // if ScrollSmoother exists, use its scrollTo. Otherwise fallback to native.
+          if (typeof ScrollSmoother !== "undefined" && ScrollSmoother.get) {
+            const s = ScrollSmoother.get(); // returns created instance
+            if (s) {
+              s.scrollTo(target, true);
+              return;
+            }
+          }
+          target.scrollIntoView({ behavior: "smooth" });
+        });
       });
     </script>
   </body>

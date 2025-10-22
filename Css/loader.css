@@ -141,3 +141,10 @@
     opacity: 0;
   }
 }
+
+.border-bottom {
+  border-bottom: 1px solid #1313131a ;
+}
+.border-bottom:last-child {
+  border: none ;
+}

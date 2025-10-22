@@ -1,18 +1,23 @@
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-ScrollSmoother.create({
+// ScrollSmoother create — wrapper has overflow:auto in CSS now
+const smoother = ScrollSmoother.create({
   wrapper: "#smooth-wrapper",
   content: "#smooth-content",
-  smooth: 0.8, // smoothness level (0.8–1.2 ভালো range)
+  smooth: 1, // test with 1 (or 0.8) and adjust
+  smoothTouch: 0.1,
   effects: true,
   normalizeScroll: true,
 });
-const nav = gsap.timeline();
-nav.from(".nav-bar", {
-  scale: 0,
-  delay: 0.5,
-  duration: 0.5,
-  opacity: 0,
-  ease: "back.out(1.7)",
+
+// hide loader and ensure page can scroll after load
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  if (loader) {
+    // fade out visually (if you have transition) then remove/hide
+    loader.classList.add("hidden"); // অথবা style.display = 'none'
+    // ensure wrapper/html overflow is okay (if you changed via JS earlier)
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+  }
 });
