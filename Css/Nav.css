@@ -8,8 +8,8 @@
 .nav-start {
   width: 220px;
   border-radius: 9999px; /* fully round */
-  transition: all 1s ease;
-  overflow: hidden;
+  /* transition: all 1s ease; */
+  /* overflow: hidden; */
 }
 .navLinks,
 .navBtn {

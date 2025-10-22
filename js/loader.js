@@ -3,9 +3,16 @@ window.addEventListener("load", () => {
   loader.classList.add("opacity-0");
   setTimeout(() => {
     loader.style.display = "none";
-  }, 700); // fade duration অনুযায়ী
+  }, 10000); // fade duration অনুযায়ী
 });
+
 window.addEventListener("load", () => {
+  const navbar = gsap.timeline();
+  navbar.from("#navbar", {
+    y: 100,
+    opacity: 0,
+    duration: 0.5,
+  });
   const nav = document.getElementById("navbar");
   const navBtn = document.getElementById("navBtn");
   const navLinks = document.getElementById("navLinks");
