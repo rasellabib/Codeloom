@@ -6,18 +6,23 @@
 
 /* Animation logic */
 .nav-start {
-  width: 70px;
-  height: 70px;
+  width: 220px;
   border-radius: 9999px; /* fully round */
   transition: all 1s ease;
   overflow: hidden;
 }
-
+.navLinks,
+.navBtn {
+  display: none;
+}
 .nav-expanded {
   width: 1344px;
-  height: 80px;
+  /* height: 80px; */
   transition: all 1s ease;
   overflow: hidden;
+}
+.navItems-expanded {
+  display: block;
 }
 @media screen and (max-width: 1199px) {
   .nav-expanded {

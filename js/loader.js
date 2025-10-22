@@ -1,5 +1,3 @@
-
-
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
   loader.classList.add("opacity-0");
@@ -9,11 +7,17 @@ window.addEventListener("load", () => {
 });
 window.addEventListener("load", () => {
   const nav = document.getElementById("navbar");
-
+  const navBtn = document.getElementById("navBtn");
+  const navLinks = document.getElementById("navLinks");
   // small delay before expanding
+
   setTimeout(() => {
     nav.classList.add("nav-expanded");
-  }, 500);
+  }, 1000);
+  setTimeout(() => {
+    navBtn.classList.add("navItems-expanded");
+    navLinks.classList.add("navItems-expanded");
+  }, 1500);
 });
 
 window.scrollTo({
