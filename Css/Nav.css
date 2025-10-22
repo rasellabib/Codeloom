@@ -4,7 +4,6 @@
   transform: translateX(-50%);
 }
 
-
 /* Animation logic */
 .nav-start {
   width: 70px;
@@ -19,6 +18,11 @@
   height: 80px;
   transition: all 1s ease;
   overflow: hidden;
+}
+@media screen and (max-width: 1199px) {
+  .nav-expanded {
+    max-width: 95%;
+  }
 }
 
 .cl-link {

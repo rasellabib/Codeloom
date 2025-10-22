@@ -3,54 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scroll Navbar Switch</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Smooth Scroll Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- GSAP + ScrollSmoother CDN -->
+
     <style>
-      .transition-fade {
-        transition: opacity 0.5s ease, transform 0.5s ease;
-      }
-      .hidden-nav {
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-20px);
-      }
-      .visible-nav {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* ScrollSmoother এর জন্য body scroll off */
       }
     </style>
   </head>
-  <body class="bg-gray-100 h-[2000px]">
 
-    <!-- First Navbar -->
-    <nav id="nav1" class="fixed top-5 left-1/2 -translate-x-1/2 bg-black text-white w-[90%] h-[70px] rounded-full flex items-center justify-center transition-fade visible-nav">
-      <h1>Navbar 1</h1>
-    </nav>
+  <body>
+    <!-- Scroll Wrapper -->
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <!-- Section 1 -->
+        <section
+          class="h-screen flex items-center justify-center bg-gradient-to-b from-orange-100 to-orange-300"
+        >
+          <h1 class="text-6xl font-extrabold text-orange-700">
+            Welcome to My Page
+          </h1>
+        </section>
 
-    <!-- Second Navbar -->
-    <nav id="nav2" class="fixed top-5 left-1/2 -translate-x-1/2 bg-[#FF6817] text-white w-[90%] h-[70px] rounded-full flex items-center justify-center transition-fade hidden-nav">
-      <h1>Navbar 2</h1>
-    </nav>
+        <!-- Section 2 -->
+        <section
+          class="h-screen flex items-center justify-center bg-gradient-to-b from-blue-100 to-blue-300"
+        >
+          <h1 class="text-6xl font-extrabold text-blue-700">
+            Smooth Scroll Section
+          </h1>
+        </section>
 
+        <!-- Section 3 -->
+        <section
+          class="h-screen flex items-center justify-center bg-gradient-to-b from-green-100 to-green-300"
+        >
+          <h1 class="text-6xl font-extrabold text-green-700">
+            Perfectly Balanced Motion
+          </h1>
+        </section>
+
+        <!-- Section 4 -->
+        <section
+          class="h-screen flex items-center justify-center bg-gradient-to-b from-purple-100 to-purple-300"
+        >
+          <h1 class="text-6xl font-extrabold text-purple-700">
+            End of Page ✨
+          </h1>
+        </section>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollSmoother.min.js"></script>
+    <!-- ScrollSmoother Script -->
     <script>
-      const nav1 = document.getElementById("nav1");
-      const nav2 = document.getElementById("nav2");
+      gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 400) { // এখানে তুমি 300px বা 500px বসাতে পারো
-          nav1.classList.remove("visible-nav");
-          nav1.classList.add("hidden-nav");
-
-          nav2.classList.remove("hidden-nav");
-          nav2.classList.add("visible-nav");
-        } else {
-          nav1.classList.add("visible-nav");
-          nav1.classList.remove("hidden-nav");
-
-          nav2.classList.add("hidden-nav");
-          nav2.classList.remove("visible-nav");
-        }
+      ScrollSmoother.create({
+        wrapper: "#smooth-wrapper",
+        content: "#smooth-content",
+        smooth: 1, // smoothness level (0.8–1.2 ভালো range)
+        effects: true,
+        normalizeScroll: true,
       });
     </script>
   </body>

@@ -10,6 +10,9 @@
   --color-black-forest: rgba(84, 84, 84, 1);
   --bg-secondary: rgba(245, 245, 245, 1);
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -103,6 +106,24 @@ p {
   line-height: 1.5;
   letter-spacing: -0.5%;
 }
+@media screen and (max-width: 1199px) {
+  h1,
+  .h1 {
+    font-size: 100px;
+  }
+  h2,
+  .h2 {
+    font-size: 60px;
+  }
+  h3,
+  .h3 {
+    font-size: 40px;
+  }
+  h4,
+  .h4 {
+    font-size: 20px;
+  }
+}
 
 @import "Css/Nav.css";
 
@@ -114,6 +135,12 @@ p {
 .container {
   max-width: 1344px;
   margin: auto;
+}
+@media screen and (max-width: 1199px) {
+  .container {
+    max-width: 100%;
+    margin: auto;
+  }
 }
 .p-tb {
   padding-top: 120px;
@@ -163,7 +190,7 @@ p {
   }
 }
 .image-container {
-  width: 1224px;
+  width: 100%;
   height: 580px;
   overflow: hidden;
   position: relative;
