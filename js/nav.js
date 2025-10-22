@@ -1,19 +1,12 @@
-const nav1 = document.getElementById("navbar");
-const nav2 = document.getElementById("navbar2");
+document.addEventListener("scroll", function () {
+  const linkSection = document.querySelector(".cl-link");
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 400) {
-    // এখানে তুমি 300px বা 500px বসাতে পারো
-    nav1.classList.remove("visible-nav");
-    nav1.classList.add("hidden-nav");
-
-    nav2.classList.remove("hidden-nav");
-    nav2.classList.add("visible-nav");
+  if (scrollPercent >= 3 && scrollPercent <= 85) {
+    linkSection.classList.add("visible");
   } else {
-    nav1.classList.add("visible-nav");
-    nav1.classList.remove("hidden-nav");
-
-    nav2.classList.add("hidden-nav");
-    nav2.classList.remove("visible-nav");
+    linkSection.classList.remove("visible");
   }
 });

@@ -13,3 +13,8 @@ window.addEventListener("load", () => {
     nav.classList.add("nav-expanded");
   }, 500);
 });
+
+window.scrollTo({
+  top: 0,
+  behavior: "smooth",
+});

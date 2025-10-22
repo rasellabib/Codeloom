@@ -3,17 +3,7 @@
   left: 50%;
   transform: translateX(-50%);
 }
-.transition-fade {
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.hidden-nav {
-  opacity: 0;
-  pointer-events: none;
-}
-.visible-nav {
-  opacity: 1;
-  pointer-events: auto;
-}
+
 
 /* Animation logic */
 .nav-start {
@@ -29,4 +19,56 @@
   height: 80px;
   transition: all 1s ease;
   overflow: hidden;
+}
+
+.cl-link {
+  max-width: 600px;
+  width: 100%;
+  color: var(--color-black);
+  padding: 15px 15px 15px 35px;
+  background-color: #eee1d7;
+  border-radius: 50px;
+  display: block;
+  cursor: pointer;
+  margin: 0 auto 40px;
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 200%);
+  transition: opacity 0.64s cubic-bezier(0.36, 0.33, 0, 1),
+    transform 0.64s cubic-bezier(0.36, 0.33, 0, 1),
+    visibility 0.64s cubic-bezier(0.36, 0.33, 0, 1);
+}
+.cl-link.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.cl-link-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cl-link-list li {
+  margin-right: 25px;
+}
+.cl-link-list:last-child {
+  margin-right: 0;
+}
+.cl-link-list a {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 30px 0;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+.cl-link-list a :hover {
+  color: var(--color-primary-orange);
 }
