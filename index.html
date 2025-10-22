@@ -45,22 +45,41 @@
                 </div>
                 <div id="navLinks" class="navLinks">
                   <div class="space-x-[40px]">
-                    <a href="#about" class="hover:underline cal-sans h6"
-                      >About</a
+                    <a
+                      href="#About"
+                      class="cl-scroll-btn cal-sans h6"
+                      data-text="About"
+                      ><span>About</span></a
                     >
-                    <a href="#projects" class="hover:underline cal-sans h6"
-                      >Projects</a
+                    <a
+                      href="#Services"
+                      class="cl-scroll-btn cal-sans h6"
+                      data-text="Services"
+                      ><span>Services</span></a
+                    ><a
+                      href="#Projects"
+                      class="cl-scroll-btn cal-sans h6"
+                      data-text="Projects"
+                      ><span>Projects</span></a
                     >
-                    <a href="#contact" class="hover:underline cal-sans h6"
-                      >Contact</a
+                    <a
+                      href="#Projects"
+                      class="cl-scroll-btn cal-sans h6"
+                      data-text="Testimonials"
+                      ><span>Testimonials</span></a
                     >
                   </div>
                 </div>
                 <div id="navBtn" class="navBtn">
                   <button
-                    class="bg-black text-white font-semibold px-[24px] py-[10px] h5 rounded-full hover:bg-red-100"
+                    class="bg-black text-white font-semibold px-[24px] py-[10px] h5 rounded-full"
                   >
-                    Book a Call
+                    <a
+                      href="#"
+                      class="cl-scroll-btn cal-sans h6"
+                      data-text="Book a Call"
+                      ><span>Book a Call</span></a
+                    >
                   </button>
                 </div>
               </div>
@@ -71,11 +90,31 @@
         <section class="cl-link">
           <div class="cl-link-inner flex items-center justify-between">
             <div class="cl-link-list">
-              <ul>
-                <li><a href=".cl-service-section">service</a></li>
-                <li><a href=".cl_featured_sec">Project</a></li>
-                <li><a href=".cl-testimonial-sec">Testimonials</a></li>
-              </ul>
+              <div class="space-x-[20px]">
+                <a
+                  href="#About"
+                  class="cl-scroll-btn cal-sans h6"
+                  data-text="About"
+                  ><span>About</span></a
+                >
+                <a
+                  href="#Services"
+                  class="cl-scroll-btn cal-sans h6"
+                  data-text="Services"
+                  ><span>Services</span></a
+                ><a
+                  href="#Projects"
+                  class="cl-scroll-btn cal-sans h6"
+                  data-text="Projects"
+                  ><span>Projects</span></a
+                >
+                <a
+                  href="#Projects"
+                  class="cl-scroll-btn cal-sans h6"
+                  data-text="Testimonials"
+                  ><span>Testimonials</span></a
+                >
+              </div>
             </div>
             <div class="cl-link-btn">
               <button
@@ -118,10 +157,10 @@
         </section>
         <!-- ------------==== bg ============ -->
         <div
-          class="circle-bg absolute top-[-360px] m-auto h-[600px] w-[1088px] blur-[150px] bg-[#FF6817] -z-10"
+          class="circle-bg absolute top-[-360px] m-auto h-[600px] blur-[150px] bg-[#FF6817] -z-10"
         ></div>
         <!-- ================ hero ===================== -->
-        <section id="hero" data-speed="2">
+        <section id="hero">
           <div class="container">
             <div class="bg-white rounded-[30px] p-tb mt-[96px]">
               <div class="hero-content">
@@ -133,7 +172,9 @@
                   <br />
                   to the next level
                 </h2>
-                <p class="text-[#777777] w-1/2 m-auto mt-[16px]">
+                <p
+                  class="text-[#777777] w-1/2 md-w-full m-auto mt-[16px] text-center"
+                >
                   Professional web design & branding for coaches ready to shine
                   as industry leaders and and grow their influence.
                 </p>
@@ -188,29 +229,31 @@
             </div>
           </div>
         </section>
-        <!-- what he do  -->
-        <section data-speed="0">
+        <!-- what i do  -->
+        <section id="WhatIDo">
           <div
-            class="container bg-[#F7F7F5] rounded-[30px] py-[80px] px-[60px]"
+            class="container bg-[#F7F7F5] rounded-[30px] xl:py-[80px] lg:py-[60px] md:py-[30px] py-[20px] xl:px-[60px] lg:px-[40px] md:px-[30px] px-[20px]"
           >
-            <div class="tite-sec flex justify-center flex-col gap-[16px]">
+            <div
+              class="WhatIDoTitle tite-sec flex justify-center flex-col gap-[16px]"
+            >
               <button
                 class="title py-[4px] px-[12px] border-[1px] border-[#FF6817] text-[#FF6817] rounded-full m-auto"
               >
                 <div class="h6">What I Do</div>
               </button>
-              <h3 class="text-center w-[50%] m-auto">
+              <h3 class="text-center lg:w-1/2 md:w-2/3 w-auto m-auto">
                 Services to
                 <span class="castoro italic text-[#FF6817]">scale your</span>
                 coaching brand
               </h3>
             </div>
-            <div class="mt-[40px]">
+            <div class="mt-[40px] WhatIDo-card-div">
               <div
-                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px]"
+                class="WhatIDo-card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px]"
               >
                 <article
-                  class="bg-white rounded-3xl p-8 hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 text-left flex flex-col gap-[80px]"
+                  class="fade-in bg-white rounded-3xl p-8 card-shadow transform hover:-translate-y-1 transition-all duration-300 text-left flex flex-col gap-[80px]"
                 >
                   <div
                     class="w-[52px] h-[52px] flex items-center justify-center bg-[#f46a1a] rounded-full"
@@ -240,7 +283,7 @@
                   </div>
                 </article>
                 <article
-                  class="bg-white rounded-3xl p-8 hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 text-left flex flex-col gap-[80px]"
+                  class="fade-in bg-white rounded-3xl p-8 card-shadow transform hover:-translate-y-1 transition-all duration-300 text-left flex flex-col gap-[80px]"
                 >
                   <div
                     class="w-[52px] h-[52px] flex items-center justify-center bg-[#f46a1a] rounded-full"
@@ -290,7 +333,7 @@
                   </div>
                 </article>
                 <article
-                  class="bg-white rounded-3xl p-8 hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 text-left flex flex-col gap-[80px]"
+                  class="fade-in bg-white rounded-3xl p-8 card-shadow transform hover:-translate-y-1 transition-all duration-300 text-left flex flex-col gap-[80px] sm:col-span-2 lg:col-span-1"
                 >
                   <div
                     class="w-[52px] h-[52px] flex items-center justify-center bg-[#f46a1a] rounded-full"
@@ -345,10 +388,10 @@
                 </article>
               </div>
               <div
-                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-[24px] mt-[24px]"
+                class="WhatIDo-card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-[24px] mt-[24px]"
               >
                 <article
-                  class="bg-white rounded-3xl p-8 hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 text-left flex flex-col gap-[80px]"
+                  class="fade-in bg-white rounded-3xl p-8 card-shadow transform hover:-translate-y-1 transition-all duration-300 text-left flex flex-col gap-[80px]"
                 >
                   <div
                     class="w-[52px] h-[52px] flex items-center justify-center bg-[#f46a1a] rounded-full"
@@ -378,7 +421,7 @@
                   </div>
                 </article>
                 <article
-                  class="bg-white rounded-3xl p-8 hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 text-left flex flex-col gap-[80px]"
+                  class="fade-in bg-white rounded-3xl p-8 card-shadow transform hover:-translate-y-1 transition-all duration-300 text-left flex flex-col gap-[80px]"
                 >
                   <div
                     class="w-[52px] h-[52px] flex items-center justify-center bg-[#f46a1a] rounded-full"
@@ -412,26 +455,32 @@
           </div>
         </section>
         <!-- our work -->
-        <section data-speed="1">
+        <section id="OurWork">
           <div class="container p-tb">
-            <div class="tite-sec flex justify-center flex-col gap-[16px]">
+            <div
+              class="tite-sec OurWork-tite flex justify-center flex-col gap-[16px]"
+            >
               <button
                 class="title py-[4px] px-[12px] border-[1px] border-[#FF6817] text-[#FF6817] rounded-full m-auto"
               >
                 <div class="h6">What I Do</div>
               </button>
-              <h3 class="text-center w-[50%] m-auto">
+              <h3 class="text-center lg:w-[50%] md:w-2/3 w-auto m-auto">
                 <span class="castoro italic text-[#FF6817]">Featured</span>
                 coaching projects
               </h3>
             </div>
-            <div class="Work-card px-[60px] mt-[40px]">
+            <div
+              class="Work-card xl:px-[60px] lg:px-[40px] md:px-[30px] px-[20px] mt-[40px]"
+            >
               <div
-                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-[48px]"
+                class="WorkCard grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 lg:gap-[48px] md:gap-[30px] gap-[20px]"
               >
-                <article class="cursor-pointer">
+                <article
+                  class="cursor-pointer hover:text-[#FF6817] transition-colors duration-300"
+                >
                   <div
-                    class="work-img mb-[20px] overflow-hidden rounded-[20px]"
+                    class="work-img lg:mb-[20px] mb-[15px] overflow-hidden rounded-[20px]"
                   >
                     <img
                       class="hover:scale-105 transition-transform duration-300"
@@ -448,7 +497,7 @@
                 </article>
                 <article class="cursor-pointer">
                   <div
-                    class="work-img mb-[20px] overflow-hidden rounded-[20px]"
+                    class="work-img lg:mb-[20px] mb-[15px] overflow-hidden rounded-[20px]"
                   >
                     <img
                       class="hover:scale-105 transition-transform duration-300"
@@ -465,7 +514,7 @@
                 </article>
                 <article class="cursor-pointer">
                   <div
-                    class="work-img mb-[20px] overflow-hidden rounded-[20px]"
+                    class="work-img lg:mb-[20px] mb-[15px] overflow-hidden rounded-[20px]"
                   >
                     <img
                       class="hover:scale-105 transition-transform duration-300"
@@ -482,7 +531,7 @@
                 </article>
                 <article class="cursor-pointer">
                   <div
-                    class="work-img mb-[20px] overflow-hidden rounded-[20px]"
+                    class="work-img lg:mb-[20px] mb-[15px] overflow-hidden rounded-[20px]"
                   >
                     <img
                       class="hover:scale-105 transition-transform duration-300"
@@ -501,19 +550,28 @@
             </div>
             <div class="work-button mt-[70px] flex justify-center">
               <button
-                class="px-[24px] py-[10px] h5 border-[1px] border-black rounded-full hover:bg-black hover:text-white transition-all duration-300"
+                class="px-[24px] py-[10px] h5 border-[1px] border-black rounded-full"
               >
-                See all Coaching Projects
+                <a
+                  href="#"
+                  class="cl-scroll-btn cal-sans h6"
+                  data-text="See all Coaching Projects"
+                  ><span>See all Coaching Projects</span></a
+                >
               </button>
             </div>
           </div>
         </section>
         <!-- About us -->
-        <section>
+        <section id="AboutUs">
           <div class="container">
-            <div class="px-[60px] py-[80px] bg-black rounded-[30px]">
-              <div class="grid grid-cols-6 gap-4">
-                <div class="col-start-1 col-end-4 me-[100px]">
+            <div
+              class="xl:py-[80px] lg:py-[60px] md:py-[40px] py-[40px] xl:px-[60px] lg:px-[40px] md:px-[30px] px-[30px] bg-black rounded-[30px]"
+            >
+              <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+                <div
+                  class="col-span-full md:col-start-1 md:col-end-4 lg:me-[100px] md:me-[10px] me-0"
+                >
                   <div class="tite-sec flex justify-start flex-col gap-[16px]">
                     <div>
                       <button
@@ -522,7 +580,7 @@
                         <div class="h6">About us</div>
                       </button>
                     </div>
-                    <h3 class="text-white">
+                    <h3 class="text-white text-[20px] md:text-[28px]">
                       Strategic design to
                       <span class="castoro italic text-[#FF6817]"
                         >elevate, transform</span
@@ -531,15 +589,22 @@
                     </h3>
                   </div>
                 </div>
-                <div class="col-span-3 col-end-7 ms-[100px]">
-                  <h5 class="text-[#A8A8A8] mt-[48px]">
+
+                <div
+                  class="col-span-full md:col-span-3 md:col-end-7 lg:ms-[100px] md:ms-[10px] ms-0"
+                >
+                  <h5
+                    class="text-[#A8A8A8] mt-[24px] md:mt-[48px] text-[14px] md:text-[16px]"
+                  >
                     We specialize in crafting expertly designed, conversion
                     focused websites and brands for coaches ready to become
                     industry leaders. Our work helps you expand your reach and
                     attract premium opportunities while you focus on what you do
                     best - transforming lives.
                   </h5>
-                  <h5 class="text-[#A8A8A8] mt-[28px]">
+                  <h5
+                    class="text-[#A8A8A8] mt-[18px] md:mt-[28px] text-[14px] md:text-[16px]"
+                  >
                     We work closely with our partners from start to finish,
                     across strategy, design and development to grow your
                     business, build deep connections, and drive meaningful
@@ -547,6 +612,7 @@
                   </h5>
                 </div>
               </div>
+
               <div class="image-container mt-[80px] rounded-[20px]">
                 <img
                   class="hover:scale-[1.3] transition-all duration-300"
@@ -558,10 +624,10 @@
           </div>
         </section>
         <!-- testimonial -->
-        <section>
+        <section id="Testimonial">
           <div class="container">
             <div
-              class="bg-[#F7F7F5] rounded-[30px] px-[60px] py-[80px] mt-[80px]"
+              class="bg-[#F7F7F5] rounded-[30px] lg:px-[60px] md:px-[30px] py-[80px] mt-[80px]"
             >
               <div class="tite-sec flex justify-center flex-col gap-[16px]">
                 <button
@@ -577,18 +643,9 @@
                 </h3>
               </div>
               <div
-                class="testimonial-div flex h-[572px] bg-white rounded-[20px] overflow-hidden mt-[45px]"
+                class="testimonial-div flex flex-col sm-items-center md:flex-col lg:flex-row justify-center gap-[20px] bg-white rounded-[20px] overflow-hidden mt-[45px] md:pt-[30px]"
               >
-                <div
-                  class="testimonial-img w-[510px] h-[100%] relative"
-                  style="
-                    background: linear-gradient(
-                      180deg,
-                      #d5dadb 0%,
-                      #858585 100%
-                    );
-                  "
-                >
+                <div class="testimonial-img w-[420px] h-[572px] relative">
                   <video
                     src="https://framerusercontent.com/assets/u4ev6EgnAR6lc2SHzBbj5DQ38.mp4"
                     loop=""
@@ -608,7 +665,7 @@
                   ></video>
                 </div>
                 <div
-                  class="testimonial-content flex flex-col justify-between flex-1 px-[70px] py-[60px]"
+                  class="testimonial-content flex flex-col justify-between flex-1 lg:px-[50px] md:px-[30px] lg:py-[60px] md:py-[30px]"
                 >
                   <div>
                     <div class="star mb-[16px]">
@@ -639,7 +696,7 @@
           </div>
         </section>
         <!-- faq -->
-        <section>
+        <section id="Faq">
           <div class="container p-tb">
             <div class="tite-sec flex justify-center flex-col gap-[16px]">
               <button
@@ -984,7 +1041,7 @@
         </section>
 
         <!-- footer -->
-        <section>
+        <section id="Footer">
           <div
             class="container rounded-[30px]"
             style="
@@ -999,14 +1056,29 @@
                 visibility 0.64s cubic-bezier(0.36, 0.33, 0, 1);
             "
           >
-            <div class="px-[60px] py-[80px] grid grid-cols-12 gap-4">
-              <div class="left-side col-start-1 col-end-6">
+            <div
+              class="px-[60px] py-[80px] grid grid-cols-1 md:grid-cols-12 gap-4"
+            >
+              <div
+                class="left-side md:col-start-1 md:col-end-6 order-1 md:order-none"
+              >
                 <div class="tite-sec flex justify-start flex-col gap-[16px]">
                   <div>
                     <button
                       class="title py-[4px] px-[12px] bg-white rounded-full"
                     >
-                      <div class="h6">Open for new work</div>
+                      <div class="h6 flex items-center gap-[8px]">
+                        <div
+                          class="w-[8px] h-[8px] rounded-full"
+                          style="
+                            background-color: var(
+                              --token-dbfcc30d-0b90-431b-b6f2-ed9e705de2ea,
+                              rgb(97, 197, 84)
+                            );
+                          "
+                        ></div>
+                        Open for new work
+                      </div>
                     </button>
                   </div>
                   <h3 class="text-white">
@@ -1147,13 +1219,15 @@
                   </div>
                 </div>
               </div>
-              <div class="right-side col-start-7 col-end-13">
+              <div
+                class="right-side md:col-start-7 md:col-end-13 order-2 md:order-none"
+              >
                 <div class="bg-white px-[32px] py-[40px] rounded-[20px]">
                   <form action="" class="flex gap-[24px] flex-col">
                     <div class="name flex flex-col gap-[8px]">
                       <label class="cal-sans h6" for="name "> Full Name </label>
                       <input
-                        class="h6 lexend rounded-[10px] px-[16px] py-[12px] border-[#E3E3E3] border-[1px] focus:outline-none focus:ring-2 focus:ring-[#FF6817] appearance-none"
+                        class="h6 lexend rounded-[10px] px-[16px] py-[12px] border-[#E3E3E3] bg-[#F7F7F5] border-[1px] focus:outline-none focus:ring-2 focus:ring-[#FF6817] appearance-none"
                         type="text"
                         name="name"
                         id="name"
@@ -1161,24 +1235,24 @@
                       />
                     </div>
                     <div class="mail-whatsapp flex gap-[16px]">
-                      <div class="email flex flex-col gap-[8px]">
+                      <div class="email flex flex-col gap-[8px] w-1/2">
                         <label class="cal-sans h6" for="email ">
                           Your mail
                         </label>
                         <input
-                          class="h6 lexend rounded-[10px] px-[16px] py-[12px] border-[#E3E3E3] border-[1px] focus:outline-none focus:ring-2 focus:ring-[#FF6817] appearance-none"
+                          class="h6 lexend rounded-[10px] px-[16px] py-[12px] border-[#E3E3E3] bg-[#F7F7F5] border-[1px] focus:outline-none focus:ring-2 focus:ring-[#FF6817] appearance-none"
                           type="text"
                           name="email"
                           id="email"
                           placeholder="Example@example.com"
                         />
                       </div>
-                      <div class="email flex flex-col gap-[8px]">
+                      <div class="email flex flex-col gap-[8px] w-1/2">
                         <label class="cal-sans h6" for="email ">
                           Whatsapp Number
                         </label>
                         <input
-                          class="h6 lexend rounded-[10px] px-[16px] py-[12px] border-[#E3E3E3] border-[1px] focus:outline-none focus:ring-2 focus:ring-[#FF6817] appearance-none"
+                          class="h6 lexend rounded-[10px] px-[16px] py-[12px] border-[#E3E3E3] bg-[#F7F7F5] border-[1px] focus:outline-none focus:ring-2 focus:ring-[#FF6817] appearance-none"
                           type="text"
                           name="email"
                           id="email"
@@ -1194,7 +1268,7 @@
                         <!-- The select -->
                         <select
                           id="service"
-                          class="w-full h-16 bg-gray-50 border border-gray-200 rounded-[14px] shadow-sm pl-6 pr-12 text-xl text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF6817] appearance-none"
+                          class="w-full h6 bg-[#F7F7F5] px-[16px] py-[12px] border-[1px] border-[#E3E3E3] rounded-[10px] text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FF6817] appearance-none"
                         >
                           <option
                             value=""
@@ -1238,7 +1312,7 @@
                         Project Details
                       </label>
                       <textarea
-                        class="h6 lexend rounded-[10px] px-[16px] py-[12px] border-[#E3E3E3] border-[1px] focus:outline-none focus:ring-2 focus:ring-[#FF6817] appearance-none"
+                        class="h6 lexend rounded-[10px] px-[16px] py-[12px] border-[#E3E3E3] bg-[#F7F7F5] border-[1px] focus:outline-none focus:ring-2 focus:ring-[#FF6817] appearance-none"
                         name="textarea"
                         rows="5"
                         id=""

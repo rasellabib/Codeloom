@@ -13,16 +13,16 @@
 html {
   scroll-behavior: smooth;
 }
-#smooth-wrapper {
-  height: 100%;
-  overflow: auto;
-}
-#smooth-content {
-  min-height: 100%;
-}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+input {
+  transition: all 0.5s ease;
+}
+textarea {
+  transition: all 0.5s ease;
 }
 .cal-sans {
   font-family: var(--ff-Cal-Sans) !important;
@@ -131,7 +131,34 @@ p {
     font-size: 20px;
   }
 }
-
+@media screen and (max-width: 991px) {
+  h1,
+  .h1 {
+    font-size: 60px;
+  }
+  h2,
+  .h2 {
+    font-size: 50px;
+  }
+  h3,
+  .h3 {
+    font-size: 32px;
+  }
+  h4,
+  .h4 {
+    font-size: 18px;
+  }
+  h5,
+  .h5 {
+    font-size: 16px;
+  }
+  .md-w-full {
+    width: 95%;
+  }
+  .sm-items-center {
+    align-items: center;
+  }
+}
 @import "Css/Nav.css";
 
 .circle-bg {
@@ -143,15 +170,27 @@ p {
   max-width: 1344px;
   margin: auto;
 }
+.p-tb {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+@media screen and (max-width: 1199px) {
+  .p-tb {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .p-tb {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
 @media screen and (max-width: 1199px) {
   .container {
     max-width: 100%;
     margin: auto;
   }
-}
-.p-tb {
-  padding-top: 120px;
-  padding-bottom: 120px;
 }
 
 .call-image {
@@ -229,4 +268,22 @@ p {
 
 #loader h1 {
   animation: glow 2s infinite ease-in-out;
+}
+.card-shadow:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
 }

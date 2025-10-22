@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
   loader.classList.add("opacity-0");
   setTimeout(() => {
     loader.style.display = "none";
-  }, 10000); // fade duration অনুযায়ী
+  }, 700); // fade duration অনুযায়ী
 });
 
 window.addEventListener("load", () => {
