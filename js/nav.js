@@ -10,3 +10,13 @@ document.addEventListener("scroll", function () {
     linkSection.classList.remove("visible");
   }
 });
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const pageContent = document.getElementById("pageContent");
+
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("open");
+  mobileMenu.classList.toggle("active");
+  pageContent.classList.toggle("blurred");
+});
