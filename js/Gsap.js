@@ -118,5 +118,5 @@ footerBig.from(".last-text", {
   y: 100,
   opacity: 0,
   stagger: 0,
-  duration: 0.5,
+  duration: 0.7,
 });
