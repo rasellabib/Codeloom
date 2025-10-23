@@ -77,21 +77,39 @@ const Testimonial = gsap.timeline({
   scrollTrigger: {
     trigger: "#Testimonial",
     scroller: "body",
-    start: "top 80%",
+    start: "top 70%",
     toggleActions: "play none none reverse",
     // markers: true,
   },
 });
-Testimonial.from(".testimonial-card", {
+Testimonial.from(".Testimonial-title ", {
+  y: 80,
+  opacity: 0,
+  duration: 0.5,
+});
+Testimonial.from(".testimonial-img, .testimonial-content", {
   y: 100,
   opacity: 0,
   stagger: 0.2,
   duration: 0.5,
 });
-
+const FaqTitle = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".FaqTitle",
+    scroller: "body",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+    // markers: true,
+  },
+});
+FaqTitle.from(".FaqTitle", {
+  y: 80,
+  opacity: 0,
+  duration: 0.5,
+});
 const Faq = gsap.timeline({
   scrollTrigger: {
-    trigger: "#Faq",
+    trigger: ".accordion-item",
     scroller: "body",
     start: "top 80%",
     toggleActions: "play none none reverse",
@@ -102,6 +120,21 @@ Faq.from(".accordion-item", {
   y: 100,
   opacity: 0,
   stagger: 0.2,
+  duration: 0.5,
+});
+const FooterTitle = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".FooterTitle",
+    scroller: "body",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+    // markers: true,
+  },
+});
+FooterTitle.from(".FooterTitle", {
+  y: 80,
+  opacity: 0,
+  stagger: 0.5,
   duration: 0.5,
 });
 const footerBig = gsap.timeline({
@@ -116,6 +149,7 @@ const footerBig = gsap.timeline({
 
 footerBig.from(".last-text", {
   y: 100,
+  delay: 0.4,
   opacity: 0,
   stagger: 0,
   duration: 0.7,

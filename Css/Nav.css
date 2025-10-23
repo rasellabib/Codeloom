@@ -38,7 +38,7 @@
 }
 
 .circle-bg {
-  max-width: 100%;
+  max-width: 1300px;
   width: 90%;
 }
 .nav {
@@ -90,14 +90,13 @@
     transition: all 0.3s ease;
   }
 }
-@media screen and (max-width: 767px) {
-}
+
 @media screen and (max-width: 600px) {
 }
 
 .cl-link {
   max-width: 600px;
-  width: 100%;
+  width: max-content;
   color: var(--color-black);
   padding: 15px 15px 15px 35px;
   background-color: #eee1d7;
@@ -116,6 +115,36 @@
     transform 0.64s cubic-bezier(0.36, 0.33, 0, 1),
     visibility 0.64s cubic-bezier(0.36, 0.33, 0, 1);
 }
+@media screen and (max-width: 767px) {
+  .cl-link {
+    padding: 15px 20px;
+  }
+}
+.modile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.modile-icon svg {
+  width: 25px;
+  height: 25px;
+}
+.modile-icon:hover {
+  color: #ff6e1f;
+  /* scale: 1.07; */
+}
+.menuBt {
+  scale: 0;;
+  transition: all 0.3s ease;
+}
+/* .menuBtn-expanded {
+  scale: 1;
+  opacity: 1;
+} */
+
 .cl-link.visible {
   opacity: 1;
   visibility: visible;

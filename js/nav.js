@@ -4,7 +4,7 @@ document.addEventListener("scroll", function () {
   const docHeight = document.body.scrollHeight - window.innerHeight;
   const scrollPercent = (scrollTop / docHeight) * 100;
 
-  if (scrollPercent >= 3 && scrollPercent <= 85) {
+  if (scrollPercent >= 15 && scrollPercent <= 85) {
     linkSection.classList.add("visible");
   } else {
     linkSection.classList.remove("visible");
