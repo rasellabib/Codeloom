@@ -18,6 +18,11 @@ const WhatIDo = gsap.timeline({
     // markers: true,
   },
 });
+WhatIDo.from(".WhatIDoTitle", {
+  y: 60,
+  opacity: 0,
+  duration: 0.5,
+});
 WhatIDo.from(".WhatIDo-card", {
   y: 60,
   opacity: 0,
