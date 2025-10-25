@@ -159,3 +159,24 @@ footerBig.from(".last-text", {
   stagger: 0,
   duration: 0.7,
 });
+// // নিশ্চিত করো GSAP ও ScrollTrigger রেজিস্টার করা আছে
+// gsap.registerPlugin(ScrollTrigger);
+
+// // Option A: নির্দিষ্ট ক্লাসগুলোর জন্য (তুমিই যেগুলো দিয়েছ)
+// const footerSocial = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: ".footer-social",
+//     scroller: "body",
+//     start: "top 90%",
+//     toggleActions: "play none none reverse",
+//     // markers: true, // ডিবাগ করতে চাইলে আনকমেন্ট করো
+//   },
+// });
+
+// footerSocial.from(".mail, .whatsapp, .linkedin", {
+//   y: 40,
+//   opacity: 0,
+//   duration: 0.45,
+//   ease: "power3.out",
+//   stagger: 0.08, // 0.08 seconds = 80ms delay between each
+// });

@@ -74,7 +74,7 @@
             </div>
             <div id="navBtn" class="navBtn">
               <button
-                class="bg-black text-white font-semibold px-[24px] py-[10px] h5 rounded-full"
+                class="bg-black text-white font-semibold px-[24px] py-[10px] h5 rounded-full cursor-pointer"
               >
                 <a
                   href="#"
@@ -84,7 +84,7 @@
                 >
               </button>
             </div>
-            <div id="menuBtn" class="lg:hidden">
+            <div id="menuBtn" class="lg:hidden flex">
               <div class="hamburger">
                 <span class="icon-line line-top"></span>
                 <span class="icon-line line-bottom"></span>
@@ -1227,12 +1227,20 @@
                       <div
                         class="footer-social flex flex-wrap gap-[8px] mt-[24px] justify-center lg:justify-start"
                       >
-                        <button
-                          class="px-[24px] py-[12px] bg-black rounded-full h5 text-white"
-                        >
-                          Book a Call Directly
-                        </button>
-                        <div class="flex gap-[8px]">
+                        <div class="footerBtn">
+                          <button
+                            class="bg-black text-white font-semibold px-[24px] py-[10px] h5 rounded-full cursor-pointer"
+                          >
+                            <a
+                              href="#"
+                              class="cl-scroll-btn cal-sans h6"
+                              data-text=" Book a Call Directly"
+                              ><span> Book a Call Directly</span></a
+                            >
+                          </button>
+                        </div>
+
+                        <div class="social flex gap-[8px]">
                           <div
                             class="mail bg-white w-[52px] h-[52px] rounded-full flex justify-center cursor-pointer items-center hover:bg-[#2c140677] transition-all duration-500"
                           >
@@ -1443,11 +1451,17 @@
                           placeholder="Tell us more about your project"
                         ></textarea>
                       </div>
-                      <div class="button">
+
+                      <div>
                         <button
-                          class="px-[24px] py-[10px] bg-[#FF6817] rounded-full h5 cal-sans text-white"
+                          class="bg-[#FF6817] text-white font-semibold px-[24px] py-[10px] h5 rounded-full cursor-pointer"
                         >
-                          Let’s Connect
+                          <a
+                            href="#"
+                            class="cl-scroll-btn cal-sans h6"
+                            data-text="Let’s Connect"
+                            ><span>Let’s Connect</span></a
+                          >
                         </button>
                       </div>
                     </form>
@@ -1498,6 +1512,8 @@
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>

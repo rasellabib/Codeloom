@@ -66,7 +66,7 @@
   max-width: 600px;
   width: max-content;
   color: var(--color-black);
-  padding: 15px 15px 15px 35px;
+  padding: 10px 10px 10px 25px;
   background-color: #eee1d7;
   border-radius: 50px;
   display: block;
@@ -85,7 +85,7 @@
 }
 @media screen and (max-width: 767px) {
   .cl-link {
-    padding: 15px 20px;
+    display: none;
   }
 }
 .mobile-icon {
@@ -101,7 +101,7 @@
   height: 22px;
 }
 .mobile-icon:hover {
-  color: #ff6e1f;
+  /* color: #ff6e1f; */
   /* scale: 1.07; */
 }
 .menuBt {
@@ -119,66 +119,99 @@
   transform: translate(-50%, 0);
 }
 
+/* base for the animated label */
 .cl-scroll-btn {
-  height: 15px;
-
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  text-align: center;
-  width: fit-content;
   white-space: nowrap;
   letter-spacing: -0.01em;
-  transform-style: flat;
-  /* transform-style: preserve-3d; */
-  transition: all 0.3s ease-in-out;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    opacity: 0;
-    z-index: -1;
-    transition: all 0.3s ease;
-  }
-  span {
-    display: inline-block;
-    transition: transform 0.2s cubic-bezier(0.55, 0.06, 0.68, 0.19),
-      opacity 0.2s ease;
-  }
-  &::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 120%);
-    opacity: 0;
-    display: inline-block;
-    white-space: nowrap;
-    color: inherit;
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-      opacity 0.3s ease;
-  }
-  &:hover {
-    span {
-      transform: translateY(-120%);
-      opacity: 0;
-    }
+  width: auto;
+  height: auto;
+  /* ensures the pseudo elements sit behind text */
+  z-index: 0;
+}
 
-    &::after {
-      transform: translate(-50%, -50%);
-      opacity: 1;
-    }
+/* original visible text */
+.cl-scroll-btn > span {
+  display: inline-block;
+  transition: transform 0.22s cubic-bezier(0.55, 0.06, 0.68, 0.19),
+    opacity 0.18s ease;
+  transform: translateY(0);
+  opacity: 1;
+  z-index: 2;
+  /* inherit color from button (text-white) unless changed */
+}
 
-    &::before {
-      opacity: 1;
-    }
-  }
+/* background highlight (optional) */
+.cl-scroll-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.25s ease;
+
+}
+
+/* the replacement text that slides up */
+.cl-scroll-btn::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 120%);
+  opacity: 0;
+  z-index: 2;
+  white-space: nowrap;
+  transition: transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.28s ease;
+  pointer-events: none;
+}
+
+/* ---------- Hover/Focus triggers ----------
+     We include selectors so hovering/focusing the parent <button>
+     also triggers the animation (button:hover .cl-scroll-btn ...)
+  -------------------------------------------------- */
+
+/* hide original text and move it up */
+.cl-scroll-btn:hover > span,
+button:hover .cl-scroll-btn > span,
+button:focus .cl-scroll-btn > span {
+  transform: translateY(-120%);
+  opacity: 0;
+}
+
+/* show replacement text (centered) */
+.cl-scroll-btn:hover::after,
+button:hover .cl-scroll-btn::after,
+button:focus .cl-scroll-btn::after {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+/* show subtle background on hover */
+.cl-scroll-btn:hover::before,
+button:hover .cl-scroll-btn::before,
+button:focus .cl-scroll-btn::before {
+  opacity: 1;
+}
+
+/* Optional: make the replacement text color orange for emphasis */
+button:hover .cl-scroll-btn::after,
+button:focus .cl-scroll-btn::after {
+  
+  /* if you want orange replacement text on hover, uncomment above and
+       optionally change the original button text color with JS/CSS */
+}
+
+/* Small accessibility tweak: focus visible */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 104, 23, 0.12);
 }
 
 .last-text {
@@ -192,7 +225,6 @@
 }
 /* container circle */
 #menuBtn {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 44px; /* adjust size */
@@ -288,7 +320,7 @@
 /* ensure anchors are positioned for dot */
 :root {
   --active-lift: 8px; /* 5px হলে 5px, 10px হলে 10px বসাও */
-  --active-color: #ff6817;
+  /* --active-color: #ff6817; */
 }
 
 /* ensure smooth transitions for both movement and color */
