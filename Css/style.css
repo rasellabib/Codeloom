@@ -32,8 +32,11 @@ textarea {
 }
 .castoro {
   font-family: var(--ff-Castoro) !important;
+  letter-spacing: -3%;
 }
-
+.letter-space4 {
+  letter-spacing: -4% !important;
+}
 img {
   max-width: 100%;
 }
@@ -113,6 +116,9 @@ p {
   line-height: 1.5;
   letter-spacing: -0.5%;
 }
+.heading-w {
+  width: 50%;
+}
 @media screen and (max-width: 1199px) {
   h1,
   .h1 {
@@ -153,18 +159,34 @@ p {
     font-size: 16px;
   }
   .md-w-full {
-    width: 95%;
+    width: 97%;
   }
   .sm-items-center {
     align-items: center;
   }
+  .heading-w {
+    width: 50%;
+  }
 }
 
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 767px) {
+  h2,
+  .h2 {
+    font-size: 46px;
+  }
   .h3 {
     font-size: 28px;
   }
+  .heading-w {
+    width: 70%;
+  }
 }
+@media screen and (max-width: 470px) {
+    .heading-w {
+    width: 97%;
+  }
+}
+
 
 .circle-bg {
   left: 50%;
@@ -193,7 +215,7 @@ p {
 }
 @media screen and (max-width: 1199px) {
   .container {
-    max-width: 95%;
+    max-width: 97%;
     margin: auto;
   }
 }
@@ -245,6 +267,11 @@ p {
   height: 580px;
   overflow: hidden;
   position: relative;
+}
+@media screen and (max-width: 1199px) {
+.image-container {
+  height: 330px;
+}
 }
 
 .image-container img {
@@ -305,14 +332,13 @@ p {
     visibility 0.64s cubic-bezier(0.36, 0.33, 0, 1);
 }
 
-
 @media screen and (max-width: 991px) {
   .footer-background {
-  background: linear-gradient(
-    to bottom,
-    #ff0021 0%,
-    #ff8717 55.04%,
-    rgb(255, 255, 255) 100%
-  );
-}
+    background: linear-gradient(
+      to bottom,
+      #ff0021 0%,
+      #ff8717 55.04%,
+      rgb(255, 255, 255) 100%
+    );
+  }
 }
