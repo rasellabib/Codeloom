@@ -12,6 +12,7 @@
   background-color: black;
   border-radius: 3px;
   transition: all 0.35s ease-in-out;
+  
 }
 
 /* Perfectly aligned X transformation */
@@ -38,8 +39,8 @@
 }
 
 .circle-bg {
-  max-width: 1300px;
-  width: 90%;
+  max-width: 100%;
+  width: 920px;
 }
 .nav {
   margin: auto;
@@ -137,7 +138,7 @@
   /* scale: 1.07; */
 }
 .menuBt {
-  scale: 0;;
+  scale: 0;
   transition: all 0.3s ease;
 }
 /* .menuBtn-expanded {
@@ -221,4 +222,21 @@
 .last-text svg {
   width: 100%;
   overflow: hidden;
+}
+.menuBtn{
+
+}
+.mobileMenu {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 30px 20px;
+  background: #000;
+  display: flex;
+  border-radius: 30px;
+  z-index: 99999;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
 }
