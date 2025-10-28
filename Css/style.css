@@ -19,10 +19,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 input {
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 textarea {
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 .cal-sans {
   font-family: var(--ff-Cal-Sans) !important;
@@ -338,6 +338,16 @@ p {
       to bottom,
       #ff0021 0%,
       #ff8717 55.04%,
+      rgb(255, 255, 255) 100%
+    );
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer-background {
+    background: linear-gradient(
+      to bottom,
+      #ff0021 0%,
+      #ff8717 70.04%,
       rgb(255, 255, 255) 100%
     );
   }

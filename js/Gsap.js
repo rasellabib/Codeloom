@@ -142,23 +142,81 @@ FooterTitle.from(".FooterTitle", {
   stagger: 0.5,
   duration: 0.5,
 });
-const footerBig = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".last-text",
-    scroller: "body",
-    start: "top 100%",
-    toggleActions: "play none none reverse",
-    // markers: true,
+// নিশ্চিত করুন ScrollTrigger রেজিস্টার করা আছে
+gsap.registerPlugin(ScrollTrigger);
+
+let footerBig; // টিমলাইন ধরে রাখতে
+
+ScrollTrigger.matchMedia({
+  // বড় স্ক্রীন (desktop)
+  "(min-width: 1025px)": function () {
+    // আগেরটা থাকলে পরিষ্কার করে নতুন বানাই
+    if (footerBig && footerBig.scrollTrigger) {
+      footerBig.scrollTrigger.kill();
+      footerBig.kill();
+    }
+
+    footerBig = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".last-text",
+        scroller: "body",
+        start: "top 100%",
+        toggleActions: "play none none reverse",
+        // markers: true,
+      },
+    });
+
+    footerBig.from(".last-text", {
+      y: 100,
+      delay: 0.4,
+      opacity: 0,
+      stagger: 0,
+      duration: 0.7,
+    });
+
+    // cleanup function — matchMedia প্রয়োজন মত কল করবে
+    return () => {
+      if (footerBig && footerBig.scrollTrigger) {
+        footerBig.scrollTrigger.kill();
+        footerBig.kill();
+      }
+    };
+  },
+
+  // tablet এবং তার নিচে
+  "(max-width: 1024px)": function () {
+    if (footerBig && footerBig.scrollTrigger) {
+      footerBig.scrollTrigger.kill();
+      footerBig.kill();
+    }
+
+    footerBig = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".last-text",
+        scroller: "body",
+        start: "top 100%",
+        toggleActions: "play none none reverse",
+        // markers: true,
+      },
+    });
+
+    footerBig.from(".last-text", {
+      y: 100,
+      delay: 0.4,
+      opacity: 0,
+      stagger: 0,
+      duration: 0.7,
+    });
+
+    return () => {
+      if (footerBig && footerBig.scrollTrigger) {
+        footerBig.scrollTrigger.kill();
+        footerBig.kill();
+      }
+    };
   },
 });
 
-footerBig.from(".last-text", {
-  y: 100,
-  delay: 0.4,
-  opacity: 0,
-  stagger: 0,
-  duration: 0.7,
-});
 // // নিশ্চিত করো GSAP ও ScrollTrigger রেজিস্টার করা আছে
 // gsap.registerPlugin(ScrollTrigger);
 

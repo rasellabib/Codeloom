@@ -6,7 +6,7 @@
 }
 
 .circle-bg {
-  max-width: 100%;
+  max-width: 67%;
   width: 920px;
 }
 .nav {
@@ -154,7 +154,6 @@
   opacity: 0;
   z-index: 1;
   transition: opacity 0.25s ease;
-
 }
 
 /* the replacement text that slides up */
@@ -203,7 +202,6 @@ button:focus .cl-scroll-btn::before {
 /* Optional: make the replacement text color orange for emphasis */
 button:hover .cl-scroll-btn::after,
 button:focus .cl-scroll-btn::after {
-  
   /* if you want orange replacement text on hover, uncomment above and
        optionally change the original button text color with JS/CSS */
 }
@@ -211,7 +209,6 @@ button:focus .cl-scroll-btn::after {
 /* Small accessibility tweak: focus visible */
 button:focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(255, 104, 23, 0.12);
 }
 
 .last-text {
