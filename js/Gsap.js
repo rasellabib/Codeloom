@@ -24,26 +24,27 @@ const WhatIDo = gsap.timeline({
 WhatIDo.from(".WhatIDoTitle", {
   y: 60,
   opacity: 0,
-  duration: 0.5,
+  stagger: 1,
+  duration: 0.8,
+  delay: 0.2,
 });
-// JS-only বার্তা — HTML পরিবর্তনের দরকার নেই
 
-gsap.utils.toArray(".WhatIDo-card").forEach((card, i) => {
-  gsap.from(card, {
-    scrollTrigger: {
-      trigger: card,
-      scroller: "body",
-      start: "top 80%",
-      toggleActions: "play none none none",
-      // markers: true, // ডিবাগ করতে লাগলে আনকমেন্ট করো
-    },
-    y: 60,
-    opacity: 0,
-    duration: 0.6,
-    ease: "power2.out",
-    // এখানে delay ইচ্ছা করলে দিতে পারো, কিন্তু প্রত্যেক কার্ডের আলাদা trigger থাকায় সাধারণত delay লাগবে না
-    // delay: i * 0.08
-  });
+const WhatIDoCard = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".WhatIDoCard",
+    scroller: "body",
+    start: "top 60%",
+    toggleActions: "play none none none",
+    markers: true,
+  },
+});
+
+WhatIDoCard.from(".WhatIDoCard ", {
+  y: 60,
+  opacity: 0,
+  stagger: 1,
+  duration: 0.8,
+  delay: 0.2,
 });
 
 // =========our work section animation==========
@@ -62,7 +63,7 @@ OurWork.from(".OurWork-tite", {
   duration: 0.5,
 });
 
-gsap.utils.toArray(".WorkCard article").forEach((card, i) => {
+gsap.utils.toArray(".WorkCard .work-cards").forEach((card, i) => {
   gsap.from(card, {
     scrollTrigger: {
       trigger: card,

@@ -1,8 +1,15 @@
-/* Blur effect when menu is open */
+/* already আছে তোমার .blurred, এটা রেখে দাও */
 .blurred {
   filter: blur(6px);
   pointer-events: none;
   user-select: none;
+  overflow: hidden;
+}
+
+/* optional: অ্যাডিশনাল safe rules when menu open */
+body.menu-open {
+  touch-action: none; /* টাচ স্ক্রল নিষ্ক্রিয় করে */
+  -webkit-overflow-scrolling: auto;
 }
 
 .nav {
@@ -19,21 +26,36 @@
   /* overflow: hidden; */
 }
 .navLinks,
-.navBtn {
+.navBtn,
+.menuBtn {
   scale: 0;
   width: 0;
   height: 0;
   opacity: 0;
   transition: all 0.3s ease;
 }
-
+@media screen and (max-width: 767px) {
+  .logo svg {
+    width: 140px;
+    height: auto;
+  }
+}
 .nav-expanded {
   width: 1344px;
   /* height: 80px; */
   transition: all 1s ease;
   overflow: hidden;
+  background: #ffffff83;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgb(255, 255, 255);
 }
 .navItems-expanded {
+  scale: 1;
+  width: auto;
+  height: auto;
+  opacity: 1;
+}
+.menuBtn-expanded {
   scale: 1;
   width: auto;
   height: auto;
@@ -52,11 +74,6 @@
     height: 0;
     opacity: 0;
     transition: all 0.3s ease;
-  }
-  .nav-expanded {
-    background: #0000002c;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgb(255, 255, 255);
   }
 }
 
@@ -84,10 +101,11 @@
     transform 0.64s cubic-bezier(0.36, 0.33, 0, 1),
     visibility 0.64s cubic-bezier(0.36, 0.33, 0, 1);
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023.99px) {
   .cl-link {
     padding: 0;
     font-size: 14px;
+    background-color: transparent;
   }
   .cl-link button span {
     font-size: 14px;

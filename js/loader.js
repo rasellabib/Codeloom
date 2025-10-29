@@ -31,6 +31,7 @@ window.addEventListener("load", () => {
   const nav = document.getElementById("navbar");
   const navBtn = document.getElementById("navBtn");
   const navLinks = document.getElementById("navLinks");
+  const menuBtn = document.getElementById("menuBtn");
   // small delay before expanding
 
   setTimeout(() => {
@@ -39,6 +40,7 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     navBtn.classList.add("navItems-expanded");
     navLinks.classList.add("navItems-expanded");
+    menuBtn.classList.add("menuBtn-expanded");
   }, 2200);
 });
 
