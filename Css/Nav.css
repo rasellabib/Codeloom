@@ -53,6 +53,11 @@
     opacity: 0;
     transition: all 0.3s ease;
   }
+  .nav-expanded {
+    background: #0000002c;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgb(255, 255, 255);
+  }
 }
 
 @media screen and (max-width: 600px) {

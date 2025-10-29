@@ -1,4 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 const hero = gsap.timeline({});
 
@@ -14,27 +16,43 @@ const WhatIDo = gsap.timeline({
     trigger: "#WhatIDo",
     scroller: "body",
     start: "top 60%",
-    toggleActions: "play none none reverse",
+    toggleActions: "play none none none",
     // markers: true,
   },
 });
+
 WhatIDo.from(".WhatIDoTitle", {
   y: 60,
   opacity: 0,
   duration: 0.5,
 });
-WhatIDo.from(".WhatIDo-card", {
-  y: 60,
-  opacity: 0,
-  duration: 0.5,
+// JS-only বার্তা — HTML পরিবর্তনের দরকার নেই
+
+gsap.utils.toArray(".WhatIDo-card").forEach((card, i) => {
+  gsap.from(card, {
+    scrollTrigger: {
+      trigger: card,
+      scroller: "body",
+      start: "top 80%",
+      toggleActions: "play none none none",
+      // markers: true, // ডিবাগ করতে লাগলে আনকমেন্ট করো
+    },
+    y: 60,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power2.out",
+    // এখানে delay ইচ্ছা করলে দিতে পারো, কিন্তু প্রত্যেক কার্ডের আলাদা trigger থাকায় সাধারণত delay লাগবে না
+    // delay: i * 0.08
+  });
 });
+
 // =========our work section animation==========
 const OurWork = gsap.timeline({
   scrollTrigger: {
     trigger: "#OurWork",
     scroller: "body",
     start: "top 60%",
-    toggleActions: "play none none reverse",
+    toggleActions: "play none none none",
     // markers: true,
   },
 });
@@ -50,7 +68,7 @@ gsap.utils.toArray(".WorkCard article").forEach((card, i) => {
       trigger: card,
       scroller: "body",
       start: "top 80%",
-      toggleActions: "play none none reverse",
+      toggleActions: "play none none none",
       // markers: true,
     },
     y: 60,
@@ -67,7 +85,7 @@ const AboutUs = gsap.timeline({
     trigger: "#AboutUs",
     scroller: "body",
     start: "top 80%",
-    toggleActions: "play none none reverse",
+    toggleActions: "play none none none",
     // markers: true,
   },
 });
@@ -83,7 +101,7 @@ AboutUs.from(".about-us-item", {
 //     trigger: "#Testimonial",
 //     scroller: "body",
 //     start: "top 70%",
-//     toggleActions: "play none none reverse",
+//     toggleActions: "play none none none",
 //     // markers: true,
 //   },
 // });
@@ -103,7 +121,7 @@ const FaqTitle = gsap.timeline({
     trigger: ".FaqTitle",
     scroller: "body",
     start: "top 80%",
-    toggleActions: "play none none reverse",
+    toggleActions: "play none none none",
     // markers: true,
   },
 });
@@ -117,7 +135,7 @@ const Faq = gsap.timeline({
     trigger: ".accordion-item",
     scroller: "body",
     start: "top 80%",
-    toggleActions: "play none none reverse",
+    toggleActions: "play none none none",
     // markers: true,
   },
 });
@@ -132,7 +150,7 @@ const FooterTitle = gsap.timeline({
     trigger: ".FooterTitle",
     scroller: "body",
     start: "top 80%",
-    toggleActions: "play none none reverse",
+    toggleActions: "play none none none",
     // markers: true,
   },
 });
@@ -161,7 +179,7 @@ ScrollTrigger.matchMedia({
         trigger: ".last-text",
         scroller: "body",
         start: "top 100%",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
         // markers: true,
       },
     });
@@ -195,7 +213,7 @@ ScrollTrigger.matchMedia({
         trigger: ".last-text",
         scroller: "body",
         start: "top 100%",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
         // markers: true,
       },
     });
@@ -226,7 +244,7 @@ ScrollTrigger.matchMedia({
 //     trigger: ".footer-social",
 //     scroller: "body",
 //     start: "top 90%",
-//     toggleActions: "play none none reverse",
+//     toggleActions: "play none none none",
 //     // markers: true, // ডিবাগ করতে চাইলে আনকমেন্ট করো
 //   },
 // });

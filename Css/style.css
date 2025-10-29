@@ -392,3 +392,49 @@ p {
     font-size: 18px;
   }
 }
+
+.loder-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background: #161a30;
+}
+.loder-container svg {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 800;
+  width: 400px;
+}
+.loder-container svg text {
+  font-size: 57px;
+  stroke-width: 2;
+  letter-spacing: -1px;
+}
+.loder-container svg text.text-body {
+  stroke: var(--color-primary-orange);
+  animation: 4s infinite alternate animateStrok;
+}
+
+/* Create The Animation */
+@keyframes animateStrok {
+  0% {
+    fill: transparent;
+    stroke: var(--color-primary-orange);
+    stroke-width: 3;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 32%;
+  }
+  50% {
+    fill: transparent;
+    stroke: var(--color-primary-orange);
+    stroke-width: 3;
+  }
+  80%,
+  100% {
+    fill: var(--color-primary-orange);
+    stroke: transparent;
+    stroke-width: 0;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 32% 0;
+  }
+}
