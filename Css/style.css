@@ -185,6 +185,9 @@ p {
     .heading-w {
     width: 97%;
   }
+  .sm-text-13px{
+    font-size: 13px;
+  }
 }
 
 
