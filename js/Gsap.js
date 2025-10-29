@@ -78,26 +78,26 @@ AboutUs.from(".about-us-item", {
   duration: 0.5,
 });
 
-const Testimonial = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#Testimonial",
-    scroller: "body",
-    start: "top 70%",
-    toggleActions: "play none none reverse",
-    // markers: true,
-  },
-});
-Testimonial.from(".Testimonial-title ", {
-  y: 80,
-  opacity: 0,
-  duration: 0.5,
-});
-Testimonial.from(".testimonial-img, .testimonial-content", {
-  y: 100,
-  opacity: 0,
-  stagger: 0.2,
-  duration: 0.5,
-});
+// const Testimonial = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: "#Testimonial",
+//     scroller: "body",
+//     start: "top 70%",
+//     toggleActions: "play none none reverse",
+//     // markers: true,
+//   },
+// });
+// Testimonial.from(".Testimonial-title ", {
+//   y: 80,
+//   opacity: 0,
+//   duration: 0.5,
+// });
+// Testimonial.from(".testimonial-img, .testimonial-content", {
+//   y: 100,
+//   opacity: 0,
+//   stagger: 0.2,
+//   duration: 0.5,
+// });
 const FaqTitle = gsap.timeline({
   scrollTrigger: {
     trigger: ".FaqTitle",

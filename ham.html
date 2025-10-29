@@ -1,109 +1,31 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navbar with Perfect X Icon</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Blur effect when menu is open */
-    .blurred {
-      filter: blur(6px);
-      pointer-events: none;
-      user-select: none;
-    }
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>Animate Strok Preloder</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    /* Hamburger lines */
-    .icon-line {
-      width: 26px;
-      height: 2.5px;
-      background-color: black;
-      border-radius: 3px;
-      transition: all 0.35s ease-in-out;
-    }
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
+        <!-- Place favicon.ico in the root directory -->
 
-    /* Perfectly aligned X transformation */
-    .open .line-top {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
+        <!-- CSS here -->
+       
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800;900&display=swap" rel="stylesheet">
 
-    .open .line-middle {
-      opacity: 0;
-    }
+    </head>
 
-    .open .line-bottom {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    /* Sliding menu animation */
-    .menu-slide {
-      transform: translateY(100%);
-      transition: transform 0.4s ease;
-    }
-
-    .menu-slide.active {
-      transform: translateY(0);
-    }
-  </style>
-</head>
-<body class="bg-gray-50 overflow-x-hidden">
-
-  <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
-      <h1 class="text-xl font-bold">MyBrand</h1>
-
-      <!-- Hamburger/X Button -->
-      <div id="menuBtn" class="flex flex-col justify-between h-[20px] cursor-pointer lg:hidden md:hidden">
-        <span class="icon-line line-top"></span>
-        <span class="icon-line line-middle"></span>
-        <span class="icon-line line-bottom"></span>
-      </div>
-
-      <!-- Desktop Links -->
-      <ul class="hidden lg:flex gap-6 font-medium">
-        <li><a href="#" class="hover:text-orange-500">Home</a></li>
-        <li><a href="#" class="hover:text-orange-500">About</a></li>
-        <li><a href="#" class="hover:text-orange-500">Services</a></li>
-        <li><a href="#" class="hover:text-orange-500">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="menu-slide fixed bottom-0 left-0 w-full h-[60vh] bg-white rounded-t-3xl shadow-lg z-40 flex flex-col justify-center items-center gap-6 text-lg font-medium">
-    <a href="#" class="hover:text-orange-500">Home</a>
-    <a href="#" class="hover:text-orange-500">About</a>
-    <a href="#" class="hover:text-orange-500">Services</a>
-    <a href="#" class="hover:text-orange-500">Contact</a>
-  </div>
-
-  <!-- Page Content -->
-  <main id="pageContent" class="pt-20 px-6 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-4">Welcome to My Page</h2>
-    <p class="mb-6">
-      This version fixes the X icon — now perfectly straight and centered.
-    </p>
-    <div class="space-y-6">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, harum!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, itaque.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, pariatur.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, exercitationem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, fugit!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, quas!</p>
-    </div>
-  </main>
-
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const pageContent = document.getElementById('pageContent');
-
-    menuBtn.addEventListener('click', () => {
-      menuBtn.classList.toggle('open');
-      mobileMenu.classList.toggle('active');
-      pageContent.classList.toggle('blurred');
-    });
-  </script>
-</body>
+    <body>
+        <!-- load all JS -->
+        <div class="loder-container">
+            <svg viewBox="40 0 400 160">
+                <text x="50%" y="50%" dy=".32em" text-anchor="middle" class="text-body">Frisk</text>
+                <text x="50%" y="50%" dy=".32em" dx="1.8em" text-anchor="middle" class="text-body">.</text>
+            </svg>
+        </div>
+    </body>
 </html>
