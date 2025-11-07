@@ -10,14 +10,12 @@ document.addEventListener("scroll", function () {
     linkSection.classList.remove("visible");
   }
 });
+
 // get elements
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
-const pageContent = document.getElementById("pageContent");
-const smoothWrapper = document.getElementById("smooth-wrapper"); // তোমার smooth scroller wrapper
+const pageContent = document.getElementById("pageContent"); // তুমি ইতিমধ্যে ব্যবহার করছো বলেছো
 const mobileLinks = document.querySelectorAll("#mobileMenu .mobile-icon");
-
-let lockedScrollY = 0; // scroll lock রাখতে
 
 // helper: remove active from all mobile icons
 function clearActiveMobileIcons() {
@@ -30,48 +28,11 @@ function setActiveMobileIcon(linkEl) {
   if (linkEl) linkEl.classList.add("active");
 }
 
-// utility: lock & unlock scroll (robust approach)
-function lockScroll() {
-  // preserve current scroll
-  lockedScrollY = window.scrollY || window.pageYOffset;
-  // fix body so page doesn't jump, and prevent touch/scroll
-  document.body.style.position = "fixed";
-  document.body.style.top = `-${lockedScrollY}px`;
-  document.body.style.left = "0";
-  document.body.style.right = "0";
-  document.body.style.width = "100%";
-  document.body.style.overflow = "hidden";
-  // if you use a smooth wrapper that has its own scroll, also hide overflow there
-  if (smoothWrapper) smoothWrapper.style.overflow = "hidden";
-}
-
-function unlockScroll() {
-  // remove fixed positioning and restore scroll
-  document.body.style.position = "";
-  document.body.style.top = "";
-  document.body.style.left = "";
-  document.body.style.right = "";
-  document.body.style.width = "";
-  document.body.style.overflow = "";
-  if (smoothWrapper) smoothWrapper.style.overflow = "";
-
-  // restore scroll position
-  window.scrollTo(0, lockedScrollY);
-  lockedScrollY = 0;
-}
-
 // open/close button behaviour (তুমি আগে করছিলে, রেখে দিলাম)
 menuBtn.addEventListener("click", () => {
-  const isOpening = !menuBtn.classList.contains("open");
   menuBtn.classList.toggle("open");
   mobileMenu.classList.toggle("active");
   pageContent.classList.toggle("blurred");
-
-  if (isOpening) {
-    lockScroll();
-  } else {
-    unlockScroll();
-  }
 });
 
 // handle click on each mobile link
@@ -90,23 +51,26 @@ mobileLinks.forEach((link) => {
 
     // smooth scroll to section (if exists)
     if (targetEl) {
+      // Use scrollIntoView with smooth behavior
       targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
+      // if no element found, still change hash (optional)
       window.location.hash = href;
     }
 
-    // close mobile menu after 200ms
+    // close mobile menu after 200ms (200ms = 0.2s)
+    // keep menu visible for 0.2s while scroll starts, then hide and remove blur
     setTimeout(() => {
       menuBtn.classList.remove("open");
       mobileMenu.classList.remove("active");
       pageContent.classList.remove("blurred");
-      unlockScroll();
     }, 200);
   });
 });
 
 /* Optional: Keep active link in sync with scroll position
    Uses IntersectionObserver to observe your sections and update active link.
+   This keeps the dot showing correctly when user scrolls manually.
 */
 const sectionIds = Array.from(mobileLinks)
   .map((a) => a.getAttribute("href"))
@@ -119,7 +83,7 @@ const sections = sectionIds
 if (sections.length) {
   const observerOptions = {
     root: null,
-    rootMargin: "0px 0px -40% 0px",
+    rootMargin: "0px 0px -40% 0px", // triggers when section crosses ~60% of viewport top
     threshold: 0,
   };
 
@@ -128,7 +92,6 @@ if (sections.length) {
       if (entry.isIntersecting) {
         // find link that points to this section
         const id = entry.target.id;
-        // ====== fix: use template literal (backticks) ======
         const activeLink = document.querySelector(
           `#mobileMenu .mobile-icon[href="#${id}"]`
         );

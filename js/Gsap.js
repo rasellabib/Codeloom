@@ -1,21 +1,56 @@
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollSmoother);
 gsap.registerPlugin(SplitText);
-gsap.registerPlugin(ScrollTrigger);
 
-const hero = gsap.timeline({});
+const smoother = ScrollSmoother.create({
+  wrapper: "#smooth-wrapper", // the wrapper element
+  content: "#smooth-content", // the content element inside wrapper
+  smooth: 1, // the smoothness (1 = default)
+  effects: true, // allows data-speed/data-lag effects on elements
+});
 
-hero.from(".hero-content, .hero-button", {
+const heroContent = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".hero-content", // Element to watch
+    start: "top 80%", // When top of element hits 80% of viewport
+    toggleActions: "play none none reverse",
+    // Options: play | pause | resume | reverse | restart | complete | reset | none
+    markers: false, // Set to true to debug trigger positions
+  },
+});
+
+heroContent.from(".hero-content", {
+  y: -40,
+  opacity: 0,
+  duration: 1,
+  delay: 2, // <-- Delay before animation starts
+  stagger: 0.2, // if there are multiple .hero-button elements
+  ease: "power2.out",
+});
+
+const hero = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".hero-button",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+    markers: false,
+  },
+});
+
+hero.from(".hero-button", {
   y: 40,
   opacity: 0,
-  stagger: 0,
   duration: 0.5,
+  delay: 2,
+  stagger: 0.2,
+  ease: "power2.out",
 });
 
 const WhatIDo = gsap.timeline({
   scrollTrigger: {
-    trigger: "#WhatIDo",
+    trigger: ".WhatIDoTitle",
     scroller: "body",
-    start: "top 60%",
+    start: "top 70%",
     toggleActions: "play none none none",
     // markers: true,
   },
@@ -24,28 +59,23 @@ const WhatIDo = gsap.timeline({
 WhatIDo.from(".WhatIDoTitle", {
   y: 60,
   opacity: 0,
-  stagger: 1,
   duration: 0.8,
   delay: 0.2,
 });
 
-const WhatIDoCard = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".WhatIDoCard",
-    scroller: "body",
-    start: "top 60%",
-    toggleActions: "play none none none",
-    markers: true,
-  },
-});
-
-WhatIDoCard.from(".WhatIDoCard ", {
-  y: 60,
-  opacity: 0,
-  stagger: 1,
-  duration: 0.8,
-  delay: 0.2,
-});
+// gsap.form('.single-service', {
+//     scrollTrigger: {
+//         trigger: '.service-wrap',
+//         start: 'top 80%',
+//         toggleActions: 'play none none reverse',
+//         markers: false,
+//     },
+//     y: 40,
+//     opacity: 1,
+//     duration: 0.6,
+//     stagger: 0.3, // controls delay between each card
+//     ease: 'power2.out',
+// });
 
 // =========our work section animation==========
 const OurWork = gsap.timeline({

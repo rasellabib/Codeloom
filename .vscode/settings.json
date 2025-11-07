@@ -1,4 +1,5 @@
 {
     "cSpell.showAutocompleteDirectiveSuggestions": true,
-    "path-intellisense.autoTriggerNextSuggestion": false
+    "path-intellisense.autoTriggerNextSuggestion": false,
+    "liveServer.settings.port": 3002
 }
